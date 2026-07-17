@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>热剧预言报告 —— 野狗骨头 vs 百花杀 vs 雀骨</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600;1,8..60,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --c-bg: #1C2644;
+    --c-bg-alt: #232F55;
+    --c-bg-light: #F0ECE3;
+    --c-bg-light-alt: #E6E0D4;
+    --c-fg: #E2DCD0;
+    --c-fg-2: #8A96A8;
+    --c-fg-3: #4E5A6E;
+    --c-fg-light: #1A2030;
+    --c-fg-light-2: #5A6270;
+    --c-fg-light-3: #9AA0A8;
+    --c-accent: #C8A870;
+    --c-border: #2E3D5C;
+    --c-border-light: #CAC4B4;
+    --f-display: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+    --f-heading: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+    --f-body: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--c-bg-light);
+    color: var(--c-fg-light);
+    font-family: var(--f-body);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+  }
+
+  /* ── Hero Section ─────────────────────────── */
+  .hero {
+    background: var(--c-bg);
+    color: var(--c-fg);
+    padding: 6rem 8vw 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-stamp {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-fg-3);
+    margin-bottom: 1.5rem;
+  }
+  .hero-stamp .accent { color: var(--c-accent); }
+
+  .hero-rule {
+    width: 36px;
+    height: 1px;
+    background: var(--c-accent);
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-family: var(--f-display);
+    font-size: clamp(42px, 6vw, 88px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--c-accent); }
+
+  .hero .lead {
+    font-size: 1.1rem;
+    color: var(--c-fg-2);
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--c-border);
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-fg-3);
+  }
+
+  /* ── Section Container ────────────────────── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 4vw;
+  }
+
+  .section-dark {
+    background: var(--c-bg);
+    color: var(--c-fg);
+    max-width: none;
+    padding: 3.5rem 8vw;
+    position: relative;
+  }
+  .section-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  .section-dark > * { position: relative; z-index: 1; }
+  .section-dark .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  /* ── Typography ───────────────────────────── */
+  .kicker {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    margin-bottom: 0.8rem;
+  }
+  .section-dark .kicker { color: var(--c-accent); }
+
+  .section h2, .section-dark h2 {
+    font-family: var(--f-heading);
+    font-size: clamp(28px, 3.2vw, 44px);
+    font-weight: 600;
+    line-height: 1.18;
+    margin-bottom: 1rem;
+  }
+  .section h2 em, .section-dark h2 em { font-style: italic; color: var(--c-accent); }
+
+  .section h3 {
+    font-family: var(--f-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-dark p, .section p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  .section-dark p { color: var(--c-fg-2); }
+  .section p { color: var(--c-fg-light-2); }
+
+  .rule {
+    width: 36px;
+    height: 1px;
+    background: var(--c-accent);
+    margin-bottom: 1.5rem;
+  }
+  .rule.full {
+    width: 100%;
+    background: var(--c-border);
+  }
+  .section-dark .rule.full { background: var(--c-border); }
+
+  /* ── Ranking Cards ────────────────────────── */
+  .rank-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .rank-card {
+    background: var(--c-bg);
+    color: var(--c-fg);
+    padding: 2rem 1.8rem;
+    position: relative;
+    border-top: 3px solid var(--c-accent);
+  }
+  .rank-card.gold { border-color: var(--c-accent); }
+  .rank-card.silver { border-color: #8A96A8; }
+  .rank-card.bronze { border-color: #8B7355; }
+
+  .rank-num {
+    font-family: var(--f-display);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--c-accent);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .rank-card.silver .rank-num { color: #8A96A8; }
+  .rank-card.bronze .rank-num { color: #8B7355; }
+
+  .rank-title {
+    font-family: var(--f-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .rank-index {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    margin-bottom: 1rem;
+  }
+
+  .rank-meta {
+    font-family: var(--f-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--c-fg-3);
+    line-height: 1.6;
+  }
+
+  .rank-tag {
+    display: inline-block;
+    font-family: var(--f-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    border: 1px solid var(--c-accent);
+    padding: 0.3em 0.8em;
+    margin-top: 1rem;
+  }
+
+  /* ── Score Table ──────────────────────────── */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+  .score-table thead th {
+    font-family: var(--f-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-fg-3);
+    text-align: left;
+    padding: 0.8rem 0.6rem;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .score-table tbody td {
+    padding: 0.7rem 0.6rem;
+    border-bottom: 1px solid var(--c-border);
+    vertical-align: top;
+  }
+  .score-table .dim { font-weight: 500; color: var(--c-fg); }
+  .score-table .wt { font-family: var(--f-mono); font-size: 0.7rem; color: var(--c-fg-3); }
+  .score-table .val { font-family: var(--f-display); font-size: 1.3rem; font-weight: 600; color: var(--c-accent); }
+  .score-table .hot { font-family: var(--f-display); font-size: 1.6rem; font-weight: 700; color: var(--c-accent); letter-spacing: -0.02em; }
+
+  /* ── Analysis Cards ───────────────────────── */
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .analysis-card {
+    padding: 1.5rem 1.8rem;
+  }
+  .analysis-card.bull {
+    background: color-mix(in srgb, var(--c-accent) 12%, var(--c-bg));
+    border-left: 3px solid var(--c-accent);
+  }
+  .analysis-card.bear {
+    background: color-mix(in srgb, #E07060 12%, var(--c-bg));
+    border-left: 3px solid #C07060;
+  }
+  .analysis-card h4 {
+    font-family: var(--f-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .analysis-card.bull h4 { color: var(--c-accent); }
+  .analysis-card.bear h4 { color: #C07060; }
+  .analysis-card ul {
+    list-style: none;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--c-fg-2);
+  }
+  .analysis-card ul li { padding-left: 1.2em; position: relative; margin-bottom: 0.4rem; }
+  .analysis-card ul li::before { content: "—"; position: absolute; left: 0; color: var(--c-accent); font-family: var(--f-mono); }
+  .analysis-card.bear ul li::before { color: #C07060; }
+
+  /* ── Conclusion ───────────────────────────── */
+  .conclusion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+  }
+  .conclusion-table th {
+    font-family: var(--f-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-fg-3);
+    text-align: left;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .conclusion-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--c-border);
+    font-size: 0.9rem;
+  }
+  .conclusion-table .prio {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+  .prio-p0 { color: var(--c-accent); }
+  .prio-p1 { color: #8A96A8; }
+  .prio-p2 { color: #8B7355; }
+
+  /* ── Footer ───────────────────────────────── */
+  .footer {
+    background: var(--c-bg);
+    color: var(--c-fg-3);
+    text-align: center;
+    padding: 3rem 4vw;
+    font-family: var(--f-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+  .footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  .footer > * { position: relative; z-index: 1; }
+
+  /* ── Responsive ───────────────────────────── */
+  @media (max-width: 800px) {
+    .rank-grid, .analysis-grid { grid-template-columns: 1fr; }
+    .hero { padding: 3rem 5vw; }
+    .hero h1 { font-size: 32px; }
+    .score-table { font-size: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-stamp">2026 暑期档 · <span class="accent">对比预测</span> · 品牌投放决策</div>
+  <div class="hero-rule"></div>
+  <h1>野狗骨头 <em>vs</em> 百花杀 <em>vs</em> 雀骨</h1>
+  <p class="lead">三部在播热剧的六维度双层评分横向对比——从品牌广告投放视角，回答"哪个节目更值得投？"</p>
+  <div class="hero-meta">
+    <span>热剧预言家 · 预测报告</span>
+    <span>2026-07-17 · v1.0</span>
+    <span>数据来源：firecrawl · 云合 · 豆瓣 · 微博</span>
+  </div>
+</section>
+
+<!-- ═══════ RANKING ═══════ -->
+<section class="section">
+  <div class="kicker">最终排名</div>
+  <h2>综合评级 <em>对比</em></h2>
+  <p>基于六维度双层评分模型（Layer 1 历史基线 + Layer 2 近期趋势修正），三部剧 Hot Index 排名如下：</p>
+
+  <div class="rank-grid">
+    <!-- 🥇 野狗骨头 -->
+    <div class="rank-card gold">
+      <div class="rank-num">01</div>
+      <div class="rank-title">野狗骨头</div>
+      <div class="rank-index">Hot Index 8.05 · A 级</div>
+      <div class="rank-meta">
+        芒果TV + 湖南卫视<br />
+        当代爱情 · 7月5日开播<br />
+        宋威龙 · 张婧仪
+      </div>
+      <span class="rank-tag">品牌投放首选</span>
+    </div>
+
+    <!-- 🥈 百花杀 -->
+    <div class="rank-card silver">
+      <div class="rank-num">02</div>
+      <div class="rank-title">百花杀</div>
+      <div class="rank-index">Hot Index 7.95 · A 级</div>
+      <div class="rank-meta">
+        腾讯视频<br />
+        古装权谋 · 7月9日开播<br />
+        何与 · 孟子义
+      </div>
+      <span class="rank-tag">流量最强 · 口碑存疑</span>
+    </div>
+
+    <!-- 🥉 雀骨 -->
+    <div class="rank-card bronze">
+      <div class="rank-num">03</div>
+      <div class="rank-title">雀骨</div>
+      <div class="rank-index">Hot Index 6.85 · B 级</div>
+      <div class="rank-meta">
+        爱奇艺<br />
+        古装爱情 · 7月11日开播<br />
+        侯明昊 · 艾米 · 原创剧本
+      </div>
+      <span class="rank-tag">口碑最佳 · 热度待观察</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DIMENSION COMPARISON ═══════ -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="kicker">六维度对比</div>
+    <h2>双层评分 <em>明细</em></h2>
+    <p>每个维度展示 Base（历史基线）→ Correction（趋势修正）→ Final（最终得分）</p>
+
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th>权重</th>
+          <th>野狗骨头</th>
+          <th>百花杀</th>
+          <th>雀骨</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dim">卡司号召力</td>
+          <td class="wt">25% / 45%</td>
+          <td><span class="val">9</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → +2</span></td>
+          <td><span class="val">9</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → +2</span></td>
+          <td><span class="val">7</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">6 → +1</span></td>
+        </tr>
+        <tr>
+          <td class="dim">主创班底</td>
+          <td class="wt">15%</td>
+          <td><span class="val">7</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → 0</span></td>
+          <td><span class="val">5</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">5 → 0</span></td>
+          <td><span class="val">5</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">5 → 0</span></td>
+        </tr>
+        <tr>
+          <td class="dim">IP 基础</td>
+          <td class="wt">20% / —</td>
+          <td><span class="val">8</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → +1</span></td>
+          <td><span class="val">8</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → +1</span></td>
+          <td style="color:var(--c-fg-3);font-family:var(--f-mono);font-size:0.7rem">原创剧本<br />权重并入卡司</td>
+        </tr>
+        <tr>
+          <td class="dim">类型赛道</td>
+          <td class="wt">15%</td>
+          <td><span class="val">7</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">6 → +1</span></td>
+          <td><span class="val">7</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → 0</span></td>
+          <td><span class="val">7</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">7 → 0</span></td>
+        </tr>
+        <tr>
+          <td class="dim">平台资源</td>
+          <td class="wt">15%</td>
+          <td><span class="val">8</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">6 → +2</span></td>
+          <td><span class="val">10</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">9 → +1</span></td>
+          <td><span class="val">8</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">8 → 0</span></td>
+        </tr>
+        <tr>
+          <td class="dim">社媒声量</td>
+          <td class="wt">10%</td>
+          <td><span class="val">9</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">8 → +1</span></td>
+          <td><span class="val">8</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">9 → -1</span></td>
+          <td><span class="val">7</span><br /><span style="font-size:0.7rem;color:var(--c-fg-3)">6 → +1</span></td>
+        </tr>
+        <tr style="border-top:2px solid var(--c-accent);">
+          <td class="dim" style="font-weight:700;">Hot Index</td>
+          <td class="wt"></td>
+          <td><span class="hot">8.05</span></td>
+          <td><span class="hot">7.95</span></td>
+          <td><span class="hot">6.85</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ PER-SHOW ANALYSIS ═══════ -->
+<section class="section">
+  <div class="kicker">深度分析</div>
+  <h2>信号解读 <em>逐剧拆解</em></h2>
+
+  <!-- 野狗骨头 -->
+  <h3 style="margin-top:2.5rem;">🥇 野狗骨头 · Hot Index 8.05</h3>
+  <div class="rule" style="margin-top:0.5rem;"></div>
+  <p style="font-size:0.9rem;"><em style="font-family:var(--f-heading);font-style:italic;color:var(--c-accent);">84个广告位、23个品牌</em>——品牌方已经用真金白银投了信任票。暑期档招商寒潮中唯一逆势突围的剧集。</p>
+
+  <div class="analysis-grid">
+    <div class="analysis-card bull">
+      <h4>✅ 利好信号</h4>
+      <ul>
+        <li>招商能力冠绝暑期档（84广告位/23品牌）</li>
+        <li>台网双平台：湖南卫视首播收视创2026纪录（酷云0.66）</li>
+        <li>对视吻名场面破圈（话题6亿+/短视频12亿+）</li>
+        <li>卡司口碑稳健：张婧仪多部7.5+，宋威龙收视验证</li>
+        <li>IP质量扎实：晋江9.6分、5星84%</li>
+      </ul>
+    </div>
+    <div class="analysis-card bear">
+      <h4>⚠️ 风险信号</h4>
+      <ul>
+        <li>芒果TV平台体量限制流量天花板</li>
+        <li>现偶赛道天然播放量低于古偶</li>
+        <li>伪兄妹/禁忌题材可能引发争议</li>
+        <li>需关注后期剧情稳定性</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 百花杀 -->
+  <h3 style="margin-top:3rem;">🥈 百花杀 · Hot Index 7.95</h3>
+  <div class="rule" style="margin-top:0.5rem;"></div>
+  <p style="font-size:0.9rem;"><em style="font-family:var(--f-heading);font-style:italic;color:var(--c-accent);">热度数据炸裂但口碑崩塌</em>——首日18分钟破亿、峰值24683、云合市占15.1%，但豆瓣仅5.6分，是典型的"高开"型选手。</p>
+
+  <div class="analysis-grid">
+    <div class="analysis-card bull">
+      <h4>✅ 利好信号</h4>
+      <ul>
+        <li>热度数据断层领先（首日18分钟破亿）</li>
+        <li>腾讯视频顶级平台资源（平台维度满分10）</li>
+        <li>孟子义九重紫口碑翻盘红利持续</li>
+        <li>IP基础扎实（锦凰数百万收藏量级）</li>
+      </ul>
+    </div>
+    <div class="analysis-card bear">
+      <h4>⚠️ 风险信号</h4>
+      <ul>
+        <li>口碑崩塌（豆瓣5.6）是最大隐患</li>
+        <li>主创班底薄弱（钟青过往口碑一般）</li>
+        <li>高开低走风险：热度开局过高+口碑差</li>
+        <li>古偶审美疲劳的赛道级风险</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 雀骨 -->
+  <h3 style="margin-top:3rem;">🥉 雀骨 · Hot Index 6.85</h3>
+  <div class="rule" style="margin-top:0.5rem;"></div>
+  <p style="font-size:0.9rem;"><em style="font-family:var(--f-heading);font-style:italic;color:var(--c-accent);">口碑最佳但热度不足</em>——豆瓣7.5分三剧最高，侯明昊"红袍战损"出圈，但原创剧本导致卡司扛45%权重，组合不足以支撑。</p>
+
+  <div class="analysis-grid">
+    <div class="analysis-card bull">
+      <h4>✅ 利好信号</h4>
+      <ul>
+        <li>豆瓣7.5分三剧口碑最佳</li>
+        <li>侯明昊+艾米二搭默契加成</li>
+        <li>原创剧本在IP泛滥市场中形成差异化</li>
+        <li>侯明昊"红袍战损"视觉出圈</li>
+        <li>爱奇艺平台稳定流量底盘</li>
+      </ul>
+    </div>
+    <div class="analysis-card bear">
+      <h4>⚠️ 风险信号</h4>
+      <ul>
+        <li>原创剧本 → 卡司扛45%权重，组合偏弱</li>
+        <li>热度8000+ vs 百花杀24000+差距3倍</li>
+        <li>导演高翊浚过往口碑偏低</li>
+        <li>同期古装强敌环伺（百花杀/莫离/翘楚）</li>
+        <li>艾米知名度有限，缺乏扛剧经验</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONCLUSION ═══════ -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="kicker">品牌投放建议</div>
+    <h2>决策 <em>优先级</em></h2>
+    <p>野狗骨头（8.05）与百花杀（7.95）仅差0.10分，但商业路径完全不同——一个赢在口碑+招商，一个赢在流量+平台。</p>
+
+    <table class="conclusion-table" style="margin-top:2rem;">
+      <thead>
+        <tr>
+          <th>优先级</th>
+          <th>节目</th>
+          <th>适合品牌</th>
+          <th>投放策略</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="prio prio-p0">P0</span></td>
+          <td style="font-weight:600;">野狗骨头</td>
+          <td>全品类，尤其年轻/女性向</td>
+          <td>现偶投放成本低于古偶，ROI可能更高；84个品牌已入局验证性价比</td>
+        </tr>
+        <tr>
+          <td><span class="prio prio-p1">P1</span></td>
+          <td style="font-weight:600;">百花杀</td>
+          <td>大预算品牌，需要曝光量</td>
+          <td>流量确定性强，但须关注口碑走势；建议签热度保底条款</td>
+        </tr>
+        <tr>
+          <td><span class="prio prio-p2">P2</span></td>
+          <td style="font-weight:600;">雀骨</td>
+          <td>垂直品类，关注口碑</td>
+          <td>观望1-2周，看口碑能否转化为热度后再决策</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:2rem;font-size:0.85rem;color:var(--c-fg-3);">
+      ⚡ <em style="font-family:var(--f-heading);font-style:italic;color:var(--c-accent);">关键变量</em>：百花杀的口碑能否在播出中后期修复？雀骨的7.5分口碑能否通过"自来水"效应逆袭？野狗骨头能否维持剧情质量避免高开低走？——这些将决定最终排名是否变化。
+    </p>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <p>🔮 热剧预言家 · Hot Program Prediction Agent · v1.0 MVP</p>
+  <p style="margin-top:0.5rem;">数据来源：firecrawl 实时搜索 · 云合数据 · 豆瓣 · 微博 · 百度百科</p>
+  <p style="margin-top:0.5rem;">预测日期：2026-07-17 · 所有评分附搜索来源 · 数据不足已标注</p>
+</footer>
+
+</body>
+</html>
