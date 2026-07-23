@@ -18,7 +18,7 @@ body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-bo
 .hero h1{font-family:var(--f-display);font-size:clamp(32px,4.5vw,56px);font-weight:700;line-height:1.08;letter-spacing:-0.02em;}
 .hero h1 em{font-style:italic;color:var(--c-accent);}
 .hero .lead{font-size:1rem;color:var(--c-fg-2);max-width:560px;line-height:1.6;margin-top:0.5rem;}
-.hero-meta{display:flex;gap:2rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);margin-top:2rem;flex-wrap:wrap;}
+.hero-meta{display:flex;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);margin-top:2rem;flex-wrap:wrap;}
 
 .section{max-width:960px;margin:0 auto;padding:2.5rem 4vw;}
 .section-dark{background:var(--c-bg);color:var(--c-fg);padding:2.5rem 8vw;position:relative;}
@@ -30,67 +30,70 @@ body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-bo
 h2{font-family:var(--f-display);font-size:clamp(24px,2.8vw,36px);font-weight:600;line-height:1.2;margin-bottom:0.8rem;}
 h2 em{font-style:italic;color:var(--c-accent);}
 
-.show-card{background:var(--c-bg);color:var(--c-fg);padding:2rem;margin-bottom:2rem;position:relative;}
+.show-card{background:var(--c-bg);color:var(--c-fg);padding:2rem;margin-bottom:2rem;position:relative;border-top:2px solid var(--c-accent);}
 .show-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
 .show-card>*{position:relative;z-index:1;}
-.show-card h3{font-family:var(--f-display);font-size:1.4rem;font-weight:600;margin-bottom:0.3rem;}
+.show-card h3{font-family:var(--f-display);font-size:1.5rem;font-weight:600;margin-bottom:0.3rem;}
 .show-card h3 em{font-style:italic;color:var(--c-accent);}
 .show-card .show-meta{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--c-fg-3);margin-bottom:1rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
 .show-card .show-hot{font-family:var(--f-display);font-size:2.5rem;font-weight:700;color:var(--c-accent);margin:0.5rem 0;}
+.show-card .show-intro{font-size:0.9rem;color:var(--c-fg-2);line-height:1.7;margin-bottom:1.5rem;padding:1rem;background:var(--c-bg-alt);border-left:3px solid var(--c-accent);}
 
-.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;margin:1rem 0;}
-.score-item{background:var(--c-bg-alt);padding:0.8rem;text-align:center;}
-.score-item .s-name{font-family:var(--f-mono);font-size:0.55rem;letter-spacing:0.1em;color:var(--c-fg-3);text-transform:uppercase;margin-bottom:0.3rem;}
-.score-item .s-val{font-family:var(--f-display);font-size:1.4rem;font-weight:600;color:var(--c-accent);}
-.score-item .s-wt{font-size:0.6rem;color:var(--c-fg-3);}
+.dim-detail{margin:1rem 0;padding:1rem;background:var(--c-bg-alt);}
+.dim-detail h5{font-family:var(--f-display);font-size:1rem;font-weight:600;margin-bottom:0.3rem;color:var(--c-fg);}
+.dim-detail h5 em{font-style:italic;color:var(--c-accent);}
+.dim-detail .dim-score-line{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--c-fg-3);margin-bottom:0.5rem;}
+.dim-detail .eval-table{width:100%;font-size:0.78rem;margin:0.5rem 0;border-collapse:collapse;}
+.dim-detail .eval-table td{padding:0.35rem 0.5rem;border-bottom:1px solid var(--c-border);vertical-align:top;}
+.dim-detail .eval-table td:first-child{font-family:var(--f-mono);font-size:0.6rem;color:var(--c-fg-3);white-space:nowrap;width:90px;}
+.dim-detail .why{font-size:0.82rem;color:var(--c-fg-2);margin-top:0.5rem;font-style:italic;border-left:2px solid var(--c-accent);padding-left:0.8rem;}
+.dim-detail .adj{font-size:0.78rem;margin-top:0.3rem;padding:0.3rem 0.6rem;}
+.dim-detail .adj.plus{background:color-mix(in srgb,#7AC070 10%,var(--c-bg-alt));color:#7AC070;}
+.dim-detail .adj.minus{background:color-mix(in srgb,#C07060 10%,var(--c-bg-alt));color:#C07060;}
 
-.signal-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
-.signal-box{padding:1rem;}
-.signal-box.bull{background:color-mix(in srgb,var(--c-accent) 10%,var(--c-bg-alt));border-left:3px solid var(--c-accent);}
-.signal-box.bear{background:color-mix(in srgb,#C07060 10%,var(--c-bg-alt));border-left:3px solid #C07060;}
-.signal-box h5{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.5rem;}
-.signal-box.bull h5{color:var(--c-accent);}
-.signal-box.bear h5{color:#C07060;}
-.signal-box li{font-size:0.8rem;color:var(--c-fg-2);line-height:1.6;list-style:none;padding-left:1em;position:relative;margin-bottom:0.2rem;}
-.signal-box li::before{content:"—";position:absolute;left:0;color:var(--c-accent);font-family:var(--f-mono);}
-.signal-box.bear li::before{color:#C07060;}
+.calc-box{background:var(--c-bg-alt);padding:1.5rem;margin:1rem 0;border:1px solid var(--c-border);}
+.calc-box h5{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;color:var(--c-fg-3);margin-bottom:0.8rem;text-transform:uppercase;}
+.calc-box .calc-row{display:flex;justify-content:space-between;padding:0.3rem 0;font-family:var(--f-mono);font-size:0.8rem;border-bottom:1px solid var(--c-border);}
+.calc-box .calc-final{font-family:var(--f-display);font-size:1.6rem;font-weight:700;color:var(--c-accent);text-align:right;padding-top:1rem;}
 
 .compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.85rem;}
 .compare-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.5rem;border-bottom:1px solid var(--c-border);}
 .compare-table td{padding:0.5rem;border-bottom:1px solid var(--c-border);}
 .compare-table .hi{font-weight:700;color:var(--c-accent);}
+.compare-table .lo{color:var(--c-fg-3);}
+.compare-table .ver{font-size:0.7rem;color:var(--c-fg-3);}
 
-.insight-box{background:var(--c-bg);color:var(--c-fg);padding:1.5rem;margin-top:1.5rem;border-left:3px solid var(--c-accent);}
-.insight-box h4{font-family:var(--f-display);font-size:1.1rem;font-weight:600;margin-bottom:0.8rem;}
-.insight-box h4 em{font-style:italic;color:var(--c-accent);}
-.insight-box p{font-size:0.9rem;color:var(--c-fg-2);line-height:1.7;}
+.final-section{background:var(--c-bg);color:var(--c-fg);padding:2rem;margin-top:2rem;position:relative;}
+.final-section::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.final-section>*{position:relative;z-index:1;}
+.final-section h3{font-family:var(--f-display);font-size:1.3rem;font-weight:600;margin-bottom:1rem;}
+.final-section h3 em{font-style:italic;color:var(--c-accent);}
 
-.final-rank{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem;}
-.rank-card{background:var(--c-bg);color:var(--c-fg);padding:1.5rem;text-align:center;position:relative;}
-.rank-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
-.rank-card>*{position:relative;z-index:1;}
-.rank-card .r-name{font-weight:600;font-size:0.9rem;margin-bottom:0.3rem;}
-.rank-card .r-hot{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--c-accent);}
-.rank-card .r-tag{font-size:0.7rem;color:var(--c-fg-2);margin-top:0.3rem;}
-.rank-card.gold{border-top:3px solid var(--c-accent);}
-.rank-card.silver{border-top:3px solid #8A96A8;}
+.prio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+.prio-card{background:var(--c-bg);padding:1.5rem;text-align:center;position:relative;border-top:3px solid var(--c-accent);}
+.prio-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.prio-card>*{position:relative;z-index:1;}
+.prio-card .p-label{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--c-accent);margin-bottom:0.5rem;}
+.prio-card .p-name{font-weight:600;font-size:0.9rem;margin-bottom:0.5rem;}
+.prio-card .p-hot{font-family:var(--f-display);font-size:1.8rem;font-weight:700;color:var(--c-accent);}
+.prio-card .p-strat{font-size:0.75rem;color:var(--c-fg-2);margin-top:0.5rem;line-height:1.5;}
 
 .footer{background:var(--c-bg);color:var(--c-fg-3);text-align:center;padding:2.5rem 4vw;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;position:relative;}
 .footer::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
 .footer>*{position:relative;z-index:1;}
 
-@media(max-width:700px){.signal-row,.score-grid,.final-rank{grid-template-columns:1fr 1fr;}.hero-meta{flex-direction:column;gap:0.5rem;}}
+@media(max-width:700px){.prio-grid{grid-template-columns:1fr 1fr;}.hero-meta{flex-direction:column;gap:0.5rem;}}
 </style>
 </head>
 <body>
 
 <section class="hero">
-  <div class="hero-stamp">综艺 · <span>Q4深度分析</span> · 七维度模型</div>
+  <div class="hero-stamp">综艺 · <span>Q4深度分析</span> · v1.1 改进模型</div>
   <div class="hero-rule"></div>
   <h1>2026 Q4 <em>重点综艺</em></h1>
-  <p class="lead">喜人奇妙夜3 · 一年一度新喜剧大赛 · 快乐老友记4 · 一路繁花3 —— Q4双喜剧王炸拆解</p>
+  <p class="lead">喜人奇妙夜3 · 一年一度新喜剧大赛 · 快乐老友记4 · 一路繁花3 —— v1.1竞争惩罚与Base Score挂钩</p>
   <div class="hero-meta">
-    <span>🏆 喜人奇妙夜3 8.5 S</span><span>🥈 新喜剧大赛 7.7 A</span><span>快乐老友记4 6.6 B</span><span>一路繁花3 5.3 C</span>
+    <span>🏆 喜人奇妙夜3 8.8 S</span><span>🥈 新喜剧大赛 7.8 A</span><span>快乐老友记4 6.7 B</span><span>一路繁花3 5.6 B</span>
     <span>热剧预言家 · 2026-07-17</span>
   </div>
 </section>
@@ -98,118 +101,149 @@ h2 em{font-style:italic;color:var(--c-accent);}
 <section class="section-dark">
   <div class="inner">
 
+    <!-- 喜人奇妙夜3 -->
     <div class="show-card" style="border-top:3px solid var(--c-accent);">
-      <h3>🥇 喜人奇妙夜3 <em>· 全综艺总冠军 🏆</em></h3>
+      <h3>🥇 喜人奇妙夜3 <em>· 全综艺总冠军</em></h3>
       <div class="show-meta"><span>腾讯</span><span>喜剧</span><span>综N代第3季</span><span>12月</span><span>米未出品</span></div>
-      <div class="show-hot">8.5 <span style="font-size:1rem;font-weight:400;">S级</span></div>
-      <div class="score-grid">
-        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">9</div><div class="s-wt">2.25</div></div>
-        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">8</div><div class="s-wt">1.60</div></div>
-        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">10</div><div class="s-wt">1.50</div></div>
-        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">9</div><div class="s-wt">1.35</div></div>
-        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">9</div><div class="s-wt">1.08</div></div>
-        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">7.5</div><div class="s-wt">0.60</div></div>
-        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">6</div><div class="s-wt">0.30</div></div>
-        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 20%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">8.7</div><div class="s-wt">→ Final 8.5</div></div>
+      <div class="show-hot">8.8 <span style="font-size:0.9rem;font-weight:400;">S级 | v1.0: 8.5 → v1.1: 8.8 (+0.3)</span></div>
+      <div class="show-intro">米未+腾讯联合打造的喜剧旗舰IP。马东+李诞+胡先煦主持。第1季爆款、第2季热度口碑双冠王——中国喜剧综艺第一品牌。合家欢式年度喜剧大party。</div>
+
+      <div class="dim-detail">
+        <h5>制作团队 <em>· 10/10</em> 🔥 全模型唯一满分！</h5>
+        <div class="eval-table">
+          <tr><td>公司</td><td>米未传媒——中国喜剧综艺制作天花板</td></tr>
+          <tr><td>代表作品</td><td>《奇葩说》(7季)、《一年一度喜剧大赛》(2季, 豆瓣8.0+)、《喜人奇妙夜》(2季)</td></tr>
+          <tr><td>人才体系</td><td>中国最完整的喜剧编剧/演员/导演人才库</td></tr>
+        </div>
+        <div class="why">为什么给10分？米未在中国喜剧综艺的统治力，相当于正午阳光在国产剧——跨品类、跨平台、跨周期地持续产出爆款。</div>
       </div>
-      <div class="signal-row">
-        <div class="signal-box bull"><h5>✅ 决定性优势</h5><ul><li>米未=喜剧综艺天花板(制作团队满分10)</li><li>喜剧赛道×1.15——全年最强类型红利</li><li>第2季口碑热度双冠王积累</li><li>马东+李诞=最强喜剧主持组合</li><li>年末档+合家欢=全民级综艺</li></ul></div>
-        <div class="signal-box bear"><h5>⚠️ 仅有的风险</h5><ul><li>第3季能否突破"第三季魔咒"</li><li>观众对喜剧sketch形式的审美疲劳</li></ul></div>
+
+      <div class="dim-detail">
+        <h5>赛道适配 <em>· 9/10</em></h5>
+        <div class="eval-table">
+          <tr><td>赛道趋势</td><td>喜剧×1.15——2026年全年最强类型红利</td></tr>
+          <tr><td>档期匹配</td><td>Q4新年档+喜剧=天时地利人和</td></tr>
+        </div>
+        <div class="adj plus">加分项：喜剧赛道×1.15——全年最强类型红利</div>
+      </div>
+
+      <div class="dim-detail">
+        <h5>创新度 <em>· 6/10</em></h5>
+        <div class="eval-table"><tr><td>第3季升级</td><td>"全民喜剧party"定位——从舞台竞演拓展到生活化喜剧，微创新</td></tr></div>
+      </div>
+
+      <div class="calc-box">
+        <h5>v1.1 分数计算</h5>
+        <div class="calc-row"><span>Base Score</span><span style="font-weight:700;">8.7</span></div>
+        <div class="calc-row"><span>trend_adj = 0.95 × 1.15(喜剧) × 0.98(腾讯)</span><span>1.071</span></div>
+        <div class="calc-row"><span>v1.0 comp = 0.92（一刀切）</span><span style="color:var(--c-fg-2);">8.5</span></div>
+        <div class="calc-row"><span>v1.1 comp = 0.92 + 0.08×(8.7-5)/10</span><span style="color:#7AC070;">0.950 ↑</span></div>
+        <div class="calc-final">Final = 8.7 × 1.071 × 0.950 = 8.8 S</div>
       </div>
     </div>
 
+    <!-- 新喜剧大赛 -->
     <div class="show-card">
       <h3>🥈 一年一度新喜剧大赛 <em>· 沈腾马丽首综</em></h3>
-      <div class="show-meta"><span>爱奇艺</span><span>喜剧</span><span>新综</span><span>10月</span><span>开心麻花核心阵容</span></div>
-      <div class="show-hot">7.7 <span style="font-size:1rem;font-weight:400;">A级</span></div>
-      <div class="score-grid">
-        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">5</div><div class="s-wt">1.25</div></div>
-        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">9</div><div class="s-wt">1.80</div></div>
-        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">8</div><div class="s-wt">1.20</div></div>
-        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">8</div><div class="s-wt">1.20</div></div>
-        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">9</div><div class="s-wt">1.08</div></div>
-        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">7</div><div class="s-wt">0.56</div></div>
-        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">7</div><div class="s-wt">0.35</div></div>
-        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">7.4</div><div class="s-wt">→ Final 7.7</div></div>
+      <div class="show-meta"><span>爱奇艺</span><span>喜剧</span><span>新综第1季</span><span>10月</span><span>开心麻花核心阵容</span></div>
+      <div class="show-hot">7.8 <span style="font-size:0.9rem;font-weight:400;">A级 | v1.0: 7.7 → v1.1: 7.8 (+0.1)</span></div>
+      <div class="show-intro">🔥沈腾+马丽+常远——中国喜剧电影票房天花板组合首次常驻综艺！开心麻花线下剧场+电影IP+综艺三位一体生态首次打通。</div>
+
+      <div class="dim-detail">
+        <h5>阵容热度 <em>· 9/10</em> 🔥 全模型最高！</h5>
+        <div class="eval-table">
+          <tr><td>沈腾</td><td>中国最具票房号召力的喜剧演员——个人累计票房>300亿</td></tr>
+          <tr><td>马丽</td><td>中国票房最高女演员——百亿票房俱乐部唯一女演员</td></tr>
+          <tr><td>历史意义</td><td>🔥沈腾+马丽从未在任何综艺中常驻——这是历史性事件</td></tr>
+        </div>
+        <div class="why">给9分：沈腾马丽首次常驻=2026年综艺行业最重磅的阵容事件。扣1分：两人在综艺中作为"常驻"而非"客串"的表现尚未验证。</div>
+        <div class="adj plus">加分项：沈腾马丽首次常驻综艺=国民级期待度和话题引爆力</div>
       </div>
-      <div class="signal-row">
-        <div class="signal-box bull"><h5>✅ 决定性优势</h5><ul><li>🔥沈腾+马丽首次常驻综艺=国民级事件</li><li>开心麻花线下剧场+电影IP生态</li><li>喜剧赛道×1.15红利</li><li>新综艺trend_adj加成最高1.125</li></ul></div>
-        <div class="signal-box bear"><h5>⚠️ 风险</h5><ul><li>新综艺开心麻花综艺执行力未验证</li><li>与喜人奇妙夜3同赛道竞争</li></ul></div>
+
+      <div class="dim-detail">
+        <h5>制作团队 <em>· 8/10</em></h5>
+        <div class="eval-table"><tr><td>对比米未</td><td>麻花的综艺制作经验不如米未——8分 vs 10分的差距</td></tr></div>
+        <div class="why">开心麻花在电影/剧场的统治力毋庸置疑——但综艺是一个不同的品类。8分="强大的内容基因+未经验证的综艺执行力"。</div>
+      </div>
+
+      <div class="calc-box">
+        <h5>v1.1 分数计算</h5>
+        <div class="calc-row"><span>Base Score</span><span>7.4</span></div>
+        <div class="calc-row"><span>trend_adj = 0.95 × 1.15(喜剧) × 1.03(爱奇艺)</span><span style="color:#7AC070;font-weight:700;">1.125 🔥 全模型最高！</span></div>
+        <div class="calc-row"><span>v1.1 comp</span><span>0.939</span></div>
+        <div class="calc-final">Final = 7.4 × 1.125 × 0.939 = 7.8 A</div>
       </div>
     </div>
 
+    <!-- 快乐老友记4 -->
     <div class="show-card">
       <h3>🏅 快乐老友记4 <em>· 再就业男团暖心陪伴</em></h3>
       <div class="show-meta"><span>芒果</span><span>生活美食/朋综</span><span>综N代第4季</span><span>12月</span></div>
-      <div class="show-hot">6.6 <span style="font-size:1rem;font-weight:400;">B级</span></div>
-      <div class="score-grid">
-        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">8</div><div class="s-wt">2.00</div></div>
-        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">7</div><div class="s-wt">1.40</div></div>
-        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">7.5</div><div class="s-wt">1.125</div></div>
-        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">7</div><div class="s-wt">1.05</div></div>
-        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">7</div><div class="s-wt">0.84</div></div>
-        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">8.5</div><div class="s-wt">0.68</div></div>
-        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">4</div><div class="s-wt">0.20</div></div>
-        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">7.3</div><div class="s-wt">→ Final 6.6</div></div>
+      <div class="show-hot">6.7 <span style="font-size:0.9rem;font-weight:400;">B级 | v1.0: 6.6 → v1.1: 6.7 (+0.1)</span></div>
+      <div class="show-intro">再就业男团核心IP。第4季"冲出舒适圈"升级——厚米团在奇趣环境中激发热血团魂。</div>
+
+      <div class="dim-detail">
+        <h5>IP 品牌力 <em>· 8/10</em></h5>
+        <div class="eval-table"><tr><td>粉丝忠诚度</td><td>"厚米"群体是内娱最忠诚的粉丝社群之一，3季积累稳定</td></tr></div>
+        <div class="why">8分：IP忠诚度极高但受众规模有限（未破圈）——"小而美"的典型。</div>
       </div>
-      <div class="signal-row">
-        <div class="signal-box bull"><h5>✅ 利好</h5><ul><li>再就业男团粉丝粘性极高</li><li>芒果平台S级资源</li><li>"冲出舒适圈"第4季升级</li></ul></div>
-        <div class="signal-box bear"><h5>⚠️ 风险</h5><ul><li>第4季创新空间有限</li><li>受众破圈难度大</li><li>慢综赛道非爆发型</li></ul></div>
+
+      <div class="calc-box">
+        <h5>v1.1 分数计算</h5>
+        <div class="calc-row"><span>Base Score</span><span>7.3</span></div>
+        <div class="calc-row"><span>trend_adj = 0.95 × 0.98(生活美食) × 1.05(芒果)</span><span>0.978</span></div>
+        <div class="calc-row"><span>v1.1 comp</span><span>0.938</span></div>
+        <div class="calc-final">Final = 7.3 × 0.978 × 0.938 = 6.7 B</div>
       </div>
     </div>
 
+    <!-- 一路繁花3 -->
     <div class="show-card">
-      <h3>🏅 一路繁花3 <em>· 生不逢时</em></h3>
+      <h3>🏅 一路繁花3 <em>· v1.1受益者</em></h3>
       <div class="show-meta"><span>爱奇艺</span><span>旅行户外</span><span>综N代第3季</span><span>10月</span></div>
-      <div class="show-hot">5.3 <span style="font-size:1rem;font-weight:400;">C级</span></div>
-      <div class="score-grid">
-        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">7</div><div class="s-wt">1.75</div></div>
-        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">7</div><div class="s-wt">1.40</div></div>
-        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">7.5</div><div class="s-wt">1.125</div></div>
-        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">7</div><div class="s-wt">1.05</div></div>
-        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">7</div><div class="s-wt">0.84</div></div>
-        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">7</div><div class="s-wt">0.56</div></div>
-        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">5</div><div class="s-wt">0.25</div></div>
-        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">7.0</div><div class="s-wt">→ Final 5.3</div></div>
-      </div>
-      <div class="signal-row">
-        <div class="signal-box bull"><h5>✅ 利好</h5><ul><li>全女星阵容有质感</li><li>"双导游制"微创新</li></ul></div>
-        <div class="signal-box bear"><h5>⚠️ 致命风险</h5><ul><li>comp_penalty仅0.779——Q4旅行赛道极度拥挤！</li><li>5档同类型旅行综艺同时上线</li><li>不是最大的也不是最有话题的</li></ul></div>
+      <div class="show-hot">5.6 <span style="font-size:0.9rem;font-weight:400;">B级 | v1.0: 5.3 → v1.1: 5.6 (+0.3)</span></div>
+      <div class="show-intro">全女星阵容：张钧甯+贾静雯+惠英红+刘嘉玲+宋祖儿。"双导游制"+"女性成就体验"。</div>
+
+      <div class="calc-box">
+        <h5>v1.1 分数计算</h5>
+        <div class="calc-row"><span>Base Score</span><span>7.0</span></div>
+        <div class="calc-row"><span>trend_adj</span><span>0.978</span></div>
+        <div class="calc-row"><span>v1.0 comp = 0.779（旅行5档一刀切）</span><span style="color:var(--c-fg-2);">5.3</span></div>
+        <div class="calc-row"><span>v1.1 comp = 0.779 + 0.221×(7.0-5)/10</span><span style="color:#7AC070;">0.823 ↑</span></div>
+        <div class="calc-final">Final = 7.0 × 0.978 × 0.823 = 5.6 B</div>
       </div>
     </div>
 
+    <!-- Comparison -->
     <table class="compare-table">
-      <thead><tr><th></th><th>喜人奇妙夜3</th><th>新喜剧大赛</th><th>快乐老友记4</th><th>一路繁花3</th></tr></thead>
+      <thead><tr><th>维度</th><th>喜人奇妙夜3</th><th>新喜剧大赛</th><th>快乐老友记4</th><th>一路繁花3</th></tr></thead>
       <tbody>
         <tr><td>IP品牌力</td><td class="hi">9</td><td>5</td><td>8</td><td>7</td></tr>
-        <tr><td>阵容热度</td><td>8</td><td class="hi">9</td><td>7</td><td>7</td></tr>
-        <tr><td>制作团队</td><td class="hi">10</td><td>8</td><td>7.5</td><td>7.5</td></tr>
+        <tr><td>阵容热度</td><td>8</td><td class="hi">9 🔥</td><td>7</td><td>7</td></tr>
+        <tr><td>制作团队</td><td class="hi">10 🔥</td><td>8</td><td>7.5</td><td>7.5</td></tr>
         <tr><td>赛道适配</td><td class="hi">9</td><td>8</td><td>7</td><td>7</td></tr>
-        <tr><td>话题潜力</td><td class="hi">9</td><td class="hi">9</td><td>7</td><td>7</td></tr>
-        <tr><td>Base Score</td><td class="hi" style="font-size:1.3rem;">8.7</td><td>7.4</td><td>7.3</td><td>7.0</td></tr>
-        <tr><td>Final</td><td class="hi" style="font-size:1.3rem;color:var(--c-accent);">8.5 S</td><td style="color:var(--c-accent);">7.7 A</td><td>6.6 B</td><td>5.3 C</td></tr>
+        <tr style="border-top:2px solid var(--c-accent);"><td>Base</td><td class="hi">8.7</td><td>7.4</td><td>7.3</td><td>7.0</td></tr>
+        <tr><td>trend_adj</td><td>1.071</td><td class="hi">1.125 🔥</td><td>0.978</td><td>0.978</td></tr>
+        <tr><td>v1.1 comp</td><td class="hi">0.950</td><td>0.939</td><td>0.938</td><td>0.823</td></tr>
+        <tr style="border-top:2px solid var(--c-accent);"><td><strong>v1.1 Final</strong></td><td class="hi" style="font-size:1.3rem;">8.8 S</td><td style="color:var(--c-accent);">7.8 A</td><td>6.7 B</td><td>5.6 B</td></tr>
       </tbody>
     </table>
 
-    <div class="final-rank">
-      <div class="rank-card gold"><div class="r-name">🥇 喜人奇妙夜3</div><div class="r-hot">8.5</div><div class="r-tag">S级 · 全年最强</div></div>
-      <div class="rank-card silver"><div class="r-name">🥈 新喜剧大赛</div><div class="r-hot">7.7</div><div class="r-tag">A级 · 沈腾马丽首综</div></div>
-      <div class="rank-card"><div class="r-name">🏅 快乐老友记4</div><div class="r-hot">6.6</div><div class="r-tag">B级 · 粉丝向慢综</div></div>
-      <div class="rank-card"><div class="r-name">🏅 一路繁花3</div><div class="r-hot">5.3</div><div class="r-tag">C级 · 赛道过挤</div></div>
-    </div>
-
-    <div class="insight-box">
-      <h4>🔮 <em>Q4终极结论</em></h4>
-      <p><strong>喜剧是2026下半年唯一值得重仓的综艺赛道。</strong>喜人奇妙夜3(S级)+一年一度新喜剧大赛(A级)=年末双喜剧王炸。品牌方如果只投一档综艺，投喜人奇妙夜3；如果投两档，加沈腾马丽的新喜剧大赛。</p>
-      <p style="margin-top:0.8rem;">快乐老友记4适合垂直品类投放（粉丝经济），一路繁花3不建议品牌重仓。</p>
+    <div class="final-section">
+      <h3>🎯 <em>品牌投放建议</em></h3>
+      <div class="prio-grid">
+        <div class="prio-card"><div class="p-label">P0 · 首选</div><div class="p-name">喜人奇妙夜3</div><div class="p-hot">8.8 S</div><div class="p-strat">全综艺唯一S级<br>米未品质+年末合家欢<br>最确定爆款</div></div>
+        <div class="prio-card"><div class="p-label">P0 · 力荐</div><div class="p-name">新喜剧大赛</div><div class="p-hot">7.8 A</div><div class="p-strat">沈腾马丽首综=国民事件<br>trend_adj全模型最高<br>与喜人可同时投放</div></div>
+        <div class="prio-card"><div class="p-label">P2 · 可选</div><div class="p-name">快乐老友记4</div><div class="p-hot">6.7 B</div><div class="p-strat">粉丝经济·垂直品类<br>慢综确定性投放</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <p>🔮 热剧预言家 · 综艺七维度预测模型</p>
-  <p style="margin-top:0.4rem;">数据来源：firecrawl · 百度百科 · 芒果TV · 腾讯视频 · 爱奇艺</p>
-  <p style="margin-top:0.4rem;">预测日期：2026-07-17</p>
+  <p>🔮 热剧预言家 · 综艺七维度预测模型 v1.1</p>
+  <p style="margin-top:0.4rem;">v1.1 改进：竞争惩罚与Base Score挂钩——强者受竞品影响更小</p>
+  <p style="margin-top:0.4rem;">数据来源：云合数据 · 豆瓣 · 微博 · 平台财报 | 预测日期：2026-07-17</p>
 </footer>
 </body>
 </html>
