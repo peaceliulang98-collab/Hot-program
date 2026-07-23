@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>热剧预言报告 · 2026 Q3-Q4 待播剧批量预测</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --c-bg:#1C2644;--c-bg-alt:#232F55;--c-bg-light:#F0ECE3;--c-bg-light-alt:#E6E0D4;
+  --c-fg:#E2DCD0;--c-fg-2:#8A96A8;--c-fg-3:#4E5A6E;--c-fg-light:#1A2030;
+  --c-fg-light-2:#5A6270;--c-fg-light-3:#9AA0A8;--c-accent:#C8A870;
+  --c-border:#2E3D5C;--c-border-light:#CAC4B4;
+  --f-display:"Source Serif 4","Noto Serif SC",Georgia,serif;
+  --f-body:"DM Sans","Noto Sans SC",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono","JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-body);-webkit-font-smoothing:antialiased;line-height:1.75;}
+
+.hero{background:var(--c-bg);color:var(--c-fg);padding:5rem 8vw 4rem;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.hero>*{position:relative;z-index:1;}
+.hero-stamp{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--c-fg-3);margin-bottom:1.5rem;}
+.hero-stamp .accent{color:var(--c-accent);}
+.hero-rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:2rem;}
+.hero h1{font-family:var(--f-display);font-size:clamp(36px,5.5vw,72px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--c-accent);}
+.hero .lead{font-size:1rem;color:var(--c-fg-2);max-width:560px;line-height:1.6;margin-bottom:1.5rem;}
+.hero-meta{display:flex;gap:2rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);flex-wrap:wrap;}
+
+.section{max-width:1200px;margin:0 auto;padding:3rem 4vw;}
+.section-dark{background:var(--c-bg);color:var(--c-fg);max-width:none;padding:3rem 8vw;position:relative;}
+.section-dark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.section-dark>*{position:relative;z-index:1;}
+.section-dark .inner{max-width:1200px;margin:0 auto;}
+
+.kicker{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-accent);margin-bottom:0.8rem;}
+h2{font-family:var(--f-display);font-size:clamp(26px,3vw,40px);font-weight:600;line-height:1.18;margin-bottom:1rem;}
+h2 em{font-style:italic;color:var(--c-accent);}
+.rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+
+/* Stats */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--c-border);margin-top:1.5rem;}
+.stat-cell{background:var(--c-bg);padding:1.8rem 1.5rem;text-align:center;}
+.stat-val{font-family:var(--f-display);font-size:2.5rem;font-weight:600;color:var(--c-accent);letter-spacing:-0.02em;line-height:1;}
+.stat-lbl{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.12em;color:var(--c-fg-3);margin-top:0.5rem;text-transform:uppercase;}
+
+/* Top list */
+.top-list{margin-top:1.5rem;}
+.top-row{display:grid;grid-template-columns:40px 1fr 80px 100px 80px;align-items:center;gap:0.8rem;padding:0.7rem 0;border-bottom:1px solid var(--c-border);font-size:0.9rem;}
+.top-row.header{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);border-bottom:1px solid var(--c-accent);padding-bottom:0.5rem;}
+.top-num{font-family:var(--f-display);font-size:1.3rem;font-weight:600;color:var(--c-accent);}
+.top-num.p0{color:var(--c-accent);}
+.top-title{font-weight:500;}
+.top-hot{font-family:var(--f-display);font-size:1.2rem;font-weight:600;color:var(--c-accent);letter-spacing:-0.02em;}
+.top-grade{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.1em;text-align:center;}
+.grade-A{color:var(--c-accent);border:1px solid var(--c-accent);padding:0.2em 0.6em;display:inline-block;}
+.grade-B{color:var(--c-fg-2);border:1px solid var(--c-fg-2);padding:0.2em 0.6em;display:inline-block;}
+.grade-C{color:var(--c-fg-3);border:1px solid var(--c-fg-3);padding:0.2em 0.6em;display:inline-block;}
+.top-desc{font-size:0.8rem;color:var(--c-fg-2);line-height:1.5;}
+
+/* Month section */
+.month-section{margin-top:2.5rem;}
+.month-section h3{font-family:var(--f-display);font-size:1.5rem;font-weight:600;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--c-border-light);}
+.month-section h3 em{font-style:italic;color:var(--c-accent);}
+.month-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:0.8rem;}
+.month-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-light-3);text-align:left;padding:0.6rem 0.5rem;border-bottom:1px solid var(--c-border-light);}
+.month-table td{padding:0.55rem 0.5rem;border-bottom:1px solid var(--c-border-light);}
+.month-table .rnk{font-family:var(--f-display);font-size:1.1rem;font-weight:600;color:var(--c-accent);width:30px;}
+.month-table .nm{font-weight:500;}
+.month-table .ht{font-family:var(--f-display);font-size:1rem;font-weight:600;color:var(--c-accent);}
+.month-table .gr{font-family:var(--f-mono);font-size:0.65rem;}
+.month-table .tagline{font-size:0.8rem;color:var(--c-fg-light-2);}
+
+.light-card{background:var(--c-bg-light-alt);padding:1.5rem;margin-top:1rem;}
+.light-card h4{font-family:var(--f-display);font-size:1.1rem;font-weight:600;margin-bottom:0.8rem;}
+.light-card ul{list-style:none;font-size:0.9rem;line-height:1.8;color:var(--c-fg-light-2);}
+.light-card ul li{padding-left:1.2em;position:relative;}
+.light-card ul li::before{content:"—";position:absolute;left:0;color:var(--c-accent);font-family:var(--f-mono);}
+
+.conclusion-table{width:100%;border-collapse:collapse;margin-top:1.5rem;}
+.conclusion-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.8rem 0.6rem;border-bottom:1px solid var(--c-border);}
+.conclusion-table td{padding:0.7rem 0.6rem;border-bottom:1px solid var(--c-border);font-size:0.9rem;}
+.prio{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;}
+.prio-P0{color:var(--c-accent);}
+.prio-P1{color:var(--c-fg-2);}
+
+.footer{background:var(--c-bg);color:var(--c-fg-3);text-align:center;padding:3rem 4vw;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;position:relative;}
+.footer::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.footer>*{position:relative;z-index:1;}
+
+@media(max-width:800px){.stat-grid{grid-template-columns:repeat(2,1fr);}.top-row{grid-template-columns:30px 1fr 60px 70px;}.top-desc{display:none;}.hero-meta{flex-direction:column;gap:0.5rem;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-stamp">2026 Q3-Q4 · <span class="accent">批量预测</span> · 品牌投放决策参考</div>
+  <div class="hero-rule"></div>
+  <h1>32部待播剧 <em>完整预测</em></h1>
+  <p class="lead">覆盖8月-12月定档剧集，六维度双层评分，A/B/C级分类——回答品牌方最核心的问题：这32部剧里，哪些值得投？</p>
+  <div class="hero-meta">
+    <span>热剧预言家 · 批量预测报告</span>
+    <span>2026-07-17</span>
+    <span>数据来源：firecrawl · 豆瓣 · 百度百科</span>
+    <span>跳过48部未定档剧集</span>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="inner">
+    <div class="kicker">总览</div>
+    <h2>32 部剧 <em>月度分布</em></h2>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-val">32</div><div class="stat-lbl">定档剧集</div></div>
+      <div class="stat-cell"><div class="stat-val">11</div><div class="stat-lbl">A 级</div></div>
+      <div class="stat-cell"><div class="stat-val">17</div><div class="stat-lbl">B 级</div></div>
+      <div class="stat-cell"><div class="stat-val">4</div><div class="stat-lbl">C 级</div></div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--c-fg-2);">
+      8月(17部) · 9月(9部) · 10月(3部) · 11月(2部) · 12月(1部)
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">完整排名</div>
+  <h2>Top <em>32</em> 总榜</h2>
+  <div class="top-list">
+    <div class="top-row header"><span>#</span><span>剧集</span><span>Hot Index</span><span>评级</span><span>月份</span></div>
+    <div class="top-row"><span class="top-num p0">1</span><span class="top-title">谍报上不封顶</span><span class="top-hot">8.10</span><span><span class="grade-A">A</span></span><span class="top-desc">肖战+正午阳光谍战</span></div>
+    <div class="top-row"><span class="top-num p0">2</span><span class="top-title">长风起</span><span class="top-hot">7.90</span><span><span class="grade-A">A</span></span><span class="top-desc">李现+杨磊悬疑IP</span></div>
+    <div class="top-row"><span class="top-num p0">3</span><span class="top-title">美顺与长生</span><span class="top-hot">7.50</span><span><span class="grade-A">A</span></span><span class="top-desc">黄轩+李路年代</span></div>
+    <div class="top-row"><span class="top-num">4</span><span class="top-title">尚公主</span><span class="top-hot">7.35</span><span><span class="grade-A">A</span></span><span class="top-desc">孟子义+李昀锐古装IP</span></div>
+    <div class="top-row"><span class="top-num">5</span><span class="top-title">重器</span><span class="top-hot">7.25</span><span><span class="grade-A">A</span></span><span class="top-desc">黄景瑜+沈严司法剧</span></div>
+    <div class="top-row"><span class="top-num">6</span><span class="top-title">云雀叫天录</span><span class="top-hot">7.20</span><span><span class="grade-A">A</span></span><span class="top-desc">六小龄童+张一山</span></div>
+    <div class="top-row"><span class="top-num">7</span><span class="top-title">九门</span><span class="top-hot">7.15</span><span><span class="grade-A">A</span></span><span class="top-desc">老九门续作+陈伟霆</span></div>
+    <div class="top-row"><span class="top-num">8</span><span class="top-title">兰香如故</span><span class="top-hot">7.15</span><span><span class="grade-A">A</span></span><span class="top-desc">谭松韵+古装家庭IP</span></div>
+    <div class="top-row"><span class="top-num">9</span><span class="top-title">五个失踪的少年</span><span class="top-hot">7.10</span><span><span class="grade-A">A</span></span><span class="top-desc">戏骨悬疑天团</span></div>
+    <div class="top-row"><span class="top-num">10</span><span class="top-title">致我那菜市场的白月光</span><span class="top-hot">7.10</span><span><span class="grade-A">A</span></span><span class="top-desc">张婧仪+李漠女性</span></div>
+    <div class="top-row"><span class="top-num">11</span><span class="top-title">待我醒来时</span><span class="top-hot">7.00</span><span><span class="grade-A">A</span></span><span class="top-desc">景甜+张新成悬疑</span></div>
+    <div class="top-row"><span class="top-num">12</span><span class="top-title">咸鱼飞升</span><span class="top-hot">6.85</span><span><span class="grade-B">B</span></span><span class="top-desc">王鹤棣+丁黑仙侠</span></div>
+    <div class="top-row"><span class="top-num">13</span><span class="top-title">兵自风中来</span><span class="top-hot">6.65</span><span><span class="grade-B">B</span></span><span class="top-desc">全明星军旅</span></div>
+    <div class="top-row"><span class="top-num">14</span><span class="top-title">万古最强宗</span><span class="top-hot">6.60</span><span><span class="grade-B">B</span></span><span class="top-desc">彭昱畅喜剧仙侠</span></div>
+    <div class="top-row"><span class="top-num">15</span><span class="top-title">美人余</span><span class="top-hot">6.55</span><span><span class="grade-B">B</span></span><span class="top-desc">李一桐都市议题</span></div>
+    <div class="top-row"><span class="top-num">16</span><span class="top-title">玉簟秋</span><span class="top-hot">6.50</span><span><span class="grade-B">B</span></span><span class="top-desc">丞磊民国虐恋</span></div>
+    <div class="top-row"><span class="top-num">17</span><span class="top-title">师兄太稳健</span><span class="top-hot">6.45</span><span><span class="grade-B">B</span></span><span class="top-desc">动画IP加持仙侠</span></div>
+    <div class="top-row"><span class="top-num">18</span><span class="top-title">无邪</span><span class="top-hot">6.45</span><span><span class="grade-B">B</span></span><span class="top-desc">刘烨悬疑</span></div>
+    <div class="top-row"><span class="top-num">19</span><span class="top-title">江山为聘</span><span class="top-hot">6.35</span><span><span class="grade-B">B</span></span><span class="top-desc">吴谨言权谋复仇</span></div>
+    <div class="top-row"><span class="top-num">20</span><span class="top-title">花开锦绣</span><span class="top-hot">6.35</span><span><span class="grade-B">B</span></span><span class="top-desc">丁禹兮+邓科</span></div>
+    <div class="top-row"><span class="top-num">21</span><span class="top-title">微尘-百里新生</span><span class="top-hot">6.30</span><span><span class="grade-B">B</span></span><span class="top-desc">徐峥现实亲情</span></div>
+    <div class="top-row"><span class="top-num">22</span><span class="top-title">古乐风华录</span><span class="top-hot">6.20</span><span><span class="grade-B">B</span></span><span class="top-desc">恒星引力古风</span></div>
+    <div class="top-row"><span class="top-num">23</span><span class="top-title">追诉</span><span class="top-hot">6.15</span><span><span class="grade-B">B</span></span><span class="top-desc">侯雯元+张国立悬疑</span></div>
+    <div class="top-row"><span class="top-num">24</span><span class="top-title">红尘四合</span><span class="top-hot">6.05</span><span><span class="grade-B">B</span></span><span class="top-desc">王星越古装爱情</span></div>
+    <div class="top-row"><span class="top-num">25</span><span class="top-title">天才女友</span><span class="top-hot">6.05</span><span><span class="grade-B">B</span></span><span class="top-desc">田曦薇+胡一天甜宠</span></div>
+    <div class="top-row"><span class="top-num">26</span><span class="top-title">早春晴朗</span><span class="top-hot">5.95</span><span><span class="grade-B">B</span></span><span class="top-desc">井柏然+孙千都市</span></div>
+    <div class="top-row"><span class="top-num">27</span><span class="top-title">小芳出嫁</span><span class="top-hot">5.75</span><span><span class="grade-B">B</span></span><span class="top-desc">女性议题IP</span></div>
+    <div class="top-row"><span class="top-num">28</span><span class="top-title">紫色大丽花</span><span class="top-hot">5.60</span><span><span class="grade-B">B</span></span><span class="top-desc">贾静雯都市情感</span></div>
+    <div class="top-row"><span class="top-num">29</span><span class="top-title">奇换人生</span><span class="top-hot">5.55</span><span><span class="grade-B">B</span></span><span class="top-desc">曾舜晞热血竞技</span></div>
+    <div class="top-row"><span class="top-num">30</span><span class="top-title">爱上另一个我</span><span class="top-hot">5.30</span><span><span class="grade-C">C</span></span><span class="top-desc">吴宣仪奇幻爱情</span></div>
+    <div class="top-row"><span class="top-num">31</span><span class="top-title">飞到我心上</span><span class="top-hot">5.15</span><span><span class="grade-C">C</span></span><span class="top-desc">魏哲鸣都市职场</span></div>
+    <div class="top-row"><span class="top-num">32</span><span class="top-title">囧徒之预演告别</span><span class="top-hot">4.65</span><span><span class="grade-C">C</span></span><span class="top-desc">贾冰+包贝尔喜剧</span></div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="inner">
+    <div class="kicker">品牌投放</div>
+    <h2>决策 <em>优先级</em></h2>
+    <table class="conclusion-table">
+      <thead><tr><th>优先级</th><th>推荐剧集</th><th>Hot Index</th><th>月份</th><th>核心优势</th></tr></thead>
+      <tbody>
+        <tr><td><span class="prio prio-P0">P0</span></td><td style="font-weight:600;">谍报上不封顶</td><td>8.10</td><td>10月</td><td>肖战+正午阳光，年度S级谍战</td></tr>
+        <tr><td><span class="prio prio-P0">P0</span></td><td style="font-weight:600;">长风起</td><td>7.90</td><td>9月</td><td>李现+杨磊(三体)，品质悬疑</td></tr>
+        <tr><td><span class="prio prio-P0">P0</span></td><td style="font-weight:600;">美顺与长生</td><td>7.50</td><td>12月</td><td>黄轩+李路(人世间)，年末大剧</td></tr>
+        <tr><td><span class="prio prio-P1">P1</span></td><td style="font-weight:600;">尚公主</td><td>7.35</td><td>10月</td><td>孟子义九重紫红利+古装IP</td></tr>
+        <tr><td><span class="prio prio-P1">P1</span></td><td style="font-weight:600;">重器</td><td>7.25</td><td>8月</td><td>全明星司法正剧，沈严执导</td></tr>
+        <tr><td><span class="prio prio-P1">P1</span></td><td style="font-weight:600;">九门</td><td>7.15</td><td>8月</td><td>老九门IP续作，陈伟霆回归</td></tr>
+        <tr><td><span class="prio prio-P1">P1</span></td><td style="font-weight:600;">五个失踪的少年</td><td>7.10</td><td>8月</td><td>戏骨天团悬疑，口碑向</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>🔮 热剧预言家 · Hot Program Prediction Agent · v1.0 MVP</p>
+  <p style="margin-top:0.5rem;">数据来源：firecrawl实时搜索 · 豆瓣 · 百度百科 · 云合</p>
+  <p style="margin-top:0.5rem;">预测日期：2026-07-17 · 批量扫描模式 · 深度有限 · 重点剧集建议单独完整分析</p>
+</footer>
+
+</body>
+</html>
