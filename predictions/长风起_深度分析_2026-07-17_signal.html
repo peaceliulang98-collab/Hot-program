@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>热剧预言 · 长风起 深度分析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--c-bg:#1C2644;--c-bg-light:#F0ECE3;--c-fg:#E2DCD0;--c-fg-2:#8A96A8;--c-fg-3:#4E5A6E;--c-fg-light:#1A2030;--c-fg-light-2:#5A6270;--c-fg-light-3:#9AA0A8;--c-accent:#C8A870;--c-border:#2E3D5C;--c-border-light:#CAC4B4;--f-display:"Source Serif 4","Noto Serif SC",Georgia,serif;--f-body:"DM Sans","Noto Sans SC",system-ui,sans-serif;--f-mono:"IBM Plex Mono",monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-body);line-height:1.75;}
+.hero{background:var(--c-bg);color:var(--c-fg);padding:4rem 8vw 3rem;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.hero>*{position:relative;z-index:1;}
+.hero-stamp{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--c-fg-3);margin-bottom:1rem;}
+.hero-stamp span{color:var(--c-accent);}
+.hero-rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+.hero h1{font-family:var(--f-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+.hero h1 em{font-style:italic;color:var(--c-accent);}
+.hero .lead{font-size:1rem;color:var(--c-fg-2);max-width:520px;line-height:1.6;}
+.hero-meta{display:flex;gap:2rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);margin-top:2rem;flex-wrap:wrap;}
+
+.section{max-width:960px;margin:0 auto;padding:2.5rem 4vw;}
+.section-dark{background:var(--c-bg);color:var(--c-fg);max-width:none;padding:2.5rem 8vw;position:relative;}
+.section-dark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.section-dark>*{position:relative;z-index:1;}
+.section-dark .inner{max-width:960px;margin:0 auto;}
+
+.kicker{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-accent);margin-bottom:0.5rem;}
+h2{font-family:var(--f-display);font-size:clamp(24px,2.8vw,36px);font-weight:600;line-height:1.2;margin-bottom:0.8rem;}
+h2 em{font-style:italic;color:var(--c-accent);}
+.rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+
+.info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.info-table td{padding:0.6rem 0.8rem;border-bottom:1px solid var(--c-border-light);font-size:0.9rem;}
+.info-table td:first-child{font-weight:500;width:120px;color:var(--c-fg-light-2);}
+
+.dim-card{background:var(--c-bg);color:var(--c-fg);padding:1.5rem;margin-bottom:1rem;}
+.dim-card h4{font-family:var(--f-display);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;}
+.dim-card h4 em{font-style:italic;color:var(--c-accent);}
+.dim-card .dim-meta{display:flex;gap:1.5rem;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--c-fg-3);margin-bottom:0.8rem;}
+.dim-card .dim-score{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--c-accent);}
+.dim-card p{font-size:0.85rem;color:var(--c-fg-2);line-height:1.7;margin-top:0.5rem;}
+.dim-card .ev-table{width:100%;font-size:0.8rem;margin:0.8rem 0;border-collapse:collapse;}
+.dim-card .ev-table td{padding:0.4rem 0.5rem;border-bottom:1px solid var(--c-border);vertical-align:top;}
+.dim-card .ev-table td:first-child{font-family:var(--f-mono);font-size:0.65rem;color:var(--c-fg-3);white-space:nowrap;width:100px;}
+
+.insight{background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg));padding:1rem 1.2rem;margin:0.8rem 0;font-size:0.85rem;line-height:1.7;border-left:3px solid var(--c-accent);}
+
+.score-summary{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.score-summary th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.6rem 0.5rem;border-bottom:1px solid var(--c-border);}
+.score-summary td{padding:0.5rem;border-bottom:1px solid var(--c-border);font-size:0.9rem;}
+.score-summary .hot-row td{font-weight:700;border-top:2px solid var(--c-accent);}
+.score-summary .hot-val{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--c-accent);letter-spacing:-0.02em;}
+
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
+.signal-card{padding:1.5rem;}
+.signal-card.bull{background:color-mix(in srgb,var(--c-accent) 12%,var(--c-bg));border-left:3px solid var(--c-accent);}
+.signal-card.bear{background:color-mix(in srgb,#C07060 12%,var(--c-bg));border-left:3px solid #C07060;}
+.signal-card h5{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.8rem;}
+.signal-card.bull h5{color:var(--c-accent);}
+.signal-card.bear h5{color:#C07060;}
+.signal-card li{font-size:0.85rem;color:var(--c-fg-2);line-height:1.7;padding-left:1.2em;position:relative;list-style:none;margin-bottom:0.3rem;}
+.signal-card li::before{content:"—";position:absolute;left:0;color:var(--c-accent);font-family:var(--f-mono);}
+.signal-card.bear li::before{color:#C07060;}
+
+.conclusion{background:var(--c-bg);color:var(--c-fg);padding:2rem;margin:1.5rem 0;position:relative;}
+.conclusion::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.conclusion>*{position:relative;z-index:1;}
+.conclusion h3{font-family:var(--f-display);font-size:1.3rem;font-weight:600;margin-bottom:1rem;}
+.conclusion h3 em{font-style:italic;color:var(--c-accent);}
+.conclusion p{font-size:0.9rem;color:var(--c-fg-2);line-height:1.8;}
+
+.footer{background:var(--c-bg);color:var(--c-fg-3);text-align:center;padding:2.5rem 4vw;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;position:relative;}
+.footer::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.footer>*{position:relative;z-index:1;}
+
+.track-table{width:100%;border-collapse:collapse;}
+.track-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.5rem;border-bottom:1px solid var(--c-border);}
+.track-table td{padding:0.5rem;border-bottom:1px solid var(--c-border);font-size:0.85rem;color:var(--c-fg-2);}
+
+.badge{display:inline-block;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-accent);border:1px solid var(--c-accent);padding:0.3em 0.8em;}
+
+.competitor-table{width:100%;border-collapse:collapse;margin:1rem 0;}
+.competitor-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.5rem;border-bottom:1px solid var(--c-border);}
+.competitor-table td{padding:0.5rem;border-bottom:1px solid var(--c-border);font-size:0.85rem;color:var(--c-fg-2);}
+
+@media(max-width:700px){.signal-grid{grid-template-columns:1fr;}.hero-meta{flex-direction:column;gap:0.5rem;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-stamp">深度分析 · <span>32部亚军</span> · 最大黑马潜力</div>
+  <div class="hero-rule"></div>
+  <h1>长风<em>起</em></h1>
+  <p class="lead">李现 × 杨磊（三体） × 算命题材 —— 2026年最被低估的品质黑马</p>
+  <div class="hero-meta">
+    <span>Hot Index: 8.55 · A级天花板</span>
+    <span>2026年9月 · 待播</span>
+    <span>热剧预言家 · 2026-07-17</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">节目概要</div>
+  <h2>基础 <em>信息</em></h2>
+  <table class="info-table">
+    <tr><td>类型/题材</td><td>民国悬疑剧情</td></tr>
+    <tr><td>播出平台</td><td>腾讯视频 + 爱奇艺（双平台拼播）</td></tr>
+    <tr><td>预计档期</td><td>2026年9月</td></tr>
+    <tr><td>主演阵容</td><td>李现、李一桐、刘冠麟、果靖霖、吴刚（特别主演）</td></tr>
+    <tr><td>导演</td><td><strong>杨磊</strong>（《三体》总导演，豆瓣8.7/飞天奖/亚洲电视大奖）</td></tr>
+    <tr><td>IP 来源</td><td>易之《我是个算命先生》（民国江湖算命题材）</td></tr>
+  </table>
+</section>
+
+<section class="section-dark">
+  <div class="inner">
+    <div class="kicker">六维度评分</div>
+    <h2>双层分析 <em>明细</em></h2>
+
+    <div class="dim-card">
+      <h4>维度 1: 卡司号召力 <em>· 权重 25%</em></h4>
+      <div class="dim-meta"><span>Base: 8</span><span>Correction: +1</span><span>Final: 9</span></div>
+      <div class="dim-score">9 / 10</div>
+      <table class="ev-table">
+        <tr><td>Layer 1</td><td>李现《亲爱的，热爱的》2019国民级爆款、《去有风的地方》豆瓣8.3/获优秀电视剧奖；李一桐《狂飙》女配(年度剧王)、《鹤唳华亭》7.0；吴刚(老戏骨)。</td></tr>
+        <tr><td>Layer 2</td><td>🔥李现+李一桐二搭（继《剑王朝》后再合作），粉丝高度期待；李现处于事业稳定上升期。</td></tr>
+      </table>
+      <div class="insight">李现(国民级流量+口碑)+李一桐(实力派)+吴刚(戏骨加持)=卡司含金量极高。</div>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 2: 主创班底 <em>· 权重 15%</em></h4>
+      <div class="dim-meta"><span>Base: 9</span><span>Correction: 0</span><span>Final: 9</span></div>
+      <div class="dim-score">9 / 10</div>
+      <table class="ev-table">
+        <tr><td>Layer 1</td><td>杨磊《三体》豆瓣8.7/35万人评分，获飞天奖优秀电视剧+亚洲电视大奖最佳剧集+白玉兰提名，被业内视为国产科幻剧导演第一人。</td></tr>
+        <tr><td>Layer 2</td><td>《三体》后首次执导民国悬疑，从科幻到民国的类型跨越引人期待。</td></tr>
+      </table>
+      <div class="insight">杨磊=32部待播剧中最强导演之一。用科幻级别的制作标准拍民国悬疑，降维打击。</div>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 3: IP 基础 <em>· 权重 20%</em></h4>
+      <div class="dim-meta"><span>Base: 7</span><span>Correction: +1</span><span>Final: 8</span></div>
+      <div class="dim-score">8 / 10</div>
+      <p>易之《我是个算命先生》2012年出版，以民国江湖算命组织"江相派"为背景，题材极为独特——算命题材在国产剧中几乎空白，差异化极强。</p>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 4: 类型赛道 <em>· 权重 15%</em></h4>
+      <div class="dim-meta"><span>Base: 7</span><span>Correction: +1</span><span>Final: 8</span></div>
+      <div class="dim-score">8 / 10</div>
+      <p>民国+悬疑+算命=三重叠加的差异化赛道，几乎没有直接竞品；杨磊三体级的制作标准确保品质。</p>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 5: 平台资源 <em>· 权重 15%</em></h4>
+      <div class="dim-meta"><span>Base: 9</span><span>Correction: 0</span><span>Final: 9</span></div>
+      <div class="dim-score">9 / 10</div>
+      <p>🔥腾讯视频(1.25亿会员)+爱奇艺双平台拼播——中国最大两个长视频平台的联合播出，用户覆盖最大化。</p>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 6: 社媒声量 <em>· 权重 10%</em></h4>
+      <div class="dim-meta"><span>Base: 7</span><span>Correction: +1</span><span>Final: 8</span></div>
+      <div class="dim-score">8 / 10</div>
+      <p>"未播先火"——低调开拍即获大量关注；李现+李一桐二搭+杨磊三体后新作，粉丝讨论活跃。</p>
+    </div>
+
+    <table class="score-summary">
+      <thead><tr><th>维度</th><th>权重</th><th>Base</th><th>Δ</th><th>Final</th><th>加权</th></tr></thead>
+      <tbody>
+        <tr><td>卡司号召力</td><td>25%</td><td>8</td><td>+1</td><td>9</td><td>2.25</td></tr>
+        <tr><td>主创班底</td><td>15%</td><td>9</td><td>0</td><td>9</td><td>1.35</td></tr>
+        <tr><td>IP 基础</td><td>20%</td><td>7</td><td>+1</td><td>8</td><td>1.60</td></tr>
+        <tr><td>类型赛道</td><td>15%</td><td>7</td><td>+1</td><td>8</td><td>1.20</td></tr>
+        <tr><td>平台资源</td><td>15%</td><td>9</td><td>0</td><td>9</td><td>1.35</td></tr>
+        <tr><td>社媒声量</td><td>10%</td><td>7</td><td>+1</td><td>8</td><td>0.80</td></tr>
+        <tr class="hot-row"><td colspan="4">Hot Index</td><td class="hot-val">8.55</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">信号分析</div>
+  <h2>利好 <em>&</em> 风险</h2>
+  <div class="signal-grid">
+    <div class="signal-card bull">
+      <h5>✅ 利好信号</h5>
+      <ul>
+        <li>杨磊=品质最高保证：三体8.7的导演拍民国悬疑是降维打击</li>
+        <li>李现+李一桐二搭：CP续热效应，粉丝基础叠加</li>
+        <li>算命题材独特性：国产剧空白赛道，差异化决定出圈潜力</li>
+        <li>腾讯+爱奇艺双顶级平台：平台维度满分</li>
+        <li>三体粉丝溢出效应：科幻粉自动关注杨磊新作</li>
+      </ul>
+    </div>
+    <div class="signal-card bear">
+      <h5>⚠️ 风险信号</h5>
+      <ul>
+        <li>类型跨度大：杨磊从科幻跳到民国悬疑能否同样出色？</li>
+        <li>算命题材可能面临审查：算命/玄学内容可能被要求修改</li>
+        <li>李一桐曝光过度：2026年同时3部剧在播</li>
+        <li>李现近年缺乏同等量级爆款（vs 2019亲爱的热爱的）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h3>🔮 <em>预测结论</em></h3>
+    <p><strong>长风起是32部中"被低估最多的黑马"。</strong>Hot Index 8.55与谍报上不封顶(8.60)差距几乎可以忽略。长风起赢在"惊喜度"——杨磊三体后的类型跨越+算命题材的独特性。对于品牌方，可能是ROI更高的选择：投放成本大概率低于肖战的S级项目，但最终品质和话题度可能不相上下。</p>
+    <p style="margin-top:1.2rem;"><strong>核心变量是杨磊</strong>：他能否将三体8.7的制作标准复用到民国悬疑？如果答案是"是"，长风起将是2026年最大的口碑黑马。</p>
+    <p style="margin-top:1.5rem;"><span class="badge">A级 · 距冠军仅0.05</span> <span style="margin-left:0.5rem;font-family:var(--f-display);font-size:1.4rem;color:var(--c-accent);">Hot Index 8.55</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">追踪计划</div>
+  <h2>播出后 <em>追踪</em></h2>
+  <table class="track-table">
+    <thead><tr><th>追踪节点</th><th>时间</th><th>关注指标</th></tr></thead>
+    <tbody>
+      <tr><td>首支预告片</td><td>待定</td><td>杨磊的民国美学呈现</td></tr>
+      <tr><td>定档官宣</td><td>预计8-9月</td><td>腾讯+爱奇艺排播资源</td></tr>
+      <tr><td>首播日</td><td>待定</td><td>双平台热度、豆瓣开分</td></tr>
+      <tr><td>播出1周</td><td>首播+7天</td><td>算命题材话题出圈度</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="footer">
+  <p>🔮 热剧预言家 · Hot Program Prediction Agent · v1.0</p>
+  <p style="margin-top:0.4rem;">数据来源：firecrawl 实时搜索 · 豆瓣 · 百度百科 · 微信读书</p>
+  <p style="margin-top:0.4rem;">预测日期：2026-07-17 · 所有评分附搜索来源</p>
+</footer>
+
+</body>
+</html>

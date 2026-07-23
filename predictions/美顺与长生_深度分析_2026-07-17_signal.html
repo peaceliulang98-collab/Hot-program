@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>热剧预言 · 美顺与长生 深度分析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--c-bg:#1C2644;--c-bg-light:#F0ECE3;--c-fg:#E2DCD0;--c-fg-2:#8A96A8;--c-fg-3:#4E5A6E;--c-fg-light:#1A2030;--c-fg-light-2:#5A6270;--c-fg-light-3:#9AA0A8;--c-accent:#C8A870;--c-border:#2E3D5C;--c-border-light:#CAC4B4;--f-display:"Source Serif 4","Noto Serif SC",Georgia,serif;--f-body:"DM Sans","Noto Sans SC",system-ui,sans-serif;--f-mono:"IBM Plex Mono",monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-body);line-height:1.75;}
+.hero{background:var(--c-bg);color:var(--c-fg);padding:4rem 8vw 3rem;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.hero>*{position:relative;z-index:1;}
+.hero-stamp{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--c-fg-3);margin-bottom:1rem;}
+.hero-stamp span{color:var(--c-accent);}
+.hero-rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+.hero h1{font-family:var(--f-display);font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+.hero h1 em{font-style:italic;color:var(--c-accent);}
+.hero .lead{font-size:1rem;color:var(--c-fg-2);max-width:520px;line-height:1.6;}
+.hero-meta{display:flex;gap:2rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);margin-top:2rem;flex-wrap:wrap;}
+
+.section{max-width:960px;margin:0 auto;padding:2.5rem 4vw;}
+.section-dark{background:var(--c-bg);color:var(--c-fg);max-width:none;padding:2.5rem 8vw;position:relative;}
+.section-dark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.section-dark>*{position:relative;z-index:1;}
+.section-dark .inner{max-width:960px;margin:0 auto;}
+
+.kicker{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-accent);margin-bottom:0.5rem;}
+h2{font-family:var(--f-display);font-size:clamp(24px,2.8vw,36px);font-weight:600;line-height:1.2;margin-bottom:0.8rem;}
+h2 em{font-style:italic;color:var(--c-accent);}
+.rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+
+.info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.info-table td{padding:0.6rem 0.8rem;border-bottom:1px solid var(--c-border-light);font-size:0.9rem;}
+.info-table td:first-child{font-weight:500;width:120px;color:var(--c-fg-light-2);}
+
+.dim-card{background:var(--c-bg);color:var(--c-fg);padding:1.5rem;margin-bottom:1rem;}
+.dim-card h4{font-family:var(--f-display);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;}
+.dim-card h4 em{font-style:italic;color:var(--c-accent);}
+.dim-card .dim-meta{display:flex;gap:1.5rem;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--c-fg-3);margin-bottom:0.8rem;}
+.dim-card .dim-score{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--c-accent);}
+.dim-card p{font-size:0.85rem;color:var(--c-fg-2);line-height:1.7;margin-top:0.5rem;}
+.dim-card .ev-table{width:100%;font-size:0.8rem;margin:0.8rem 0;border-collapse:collapse;}
+.dim-card .ev-table td{padding:0.4rem 0.5rem;border-bottom:1px solid var(--c-border);vertical-align:top;}
+.dim-card .ev-table td:first-child{font-family:var(--f-mono);font-size:0.65rem;color:var(--c-fg-3);white-space:nowrap;width:100px;}
+
+.insight{background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg));padding:1rem 1.2rem;margin:0.8rem 0;font-size:0.85rem;line-height:1.7;border-left:3px solid var(--c-accent);}
+
+.score-summary{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.score-summary th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.6rem 0.5rem;border-bottom:1px solid var(--c-border);}
+.score-summary td{padding:0.5rem;border-bottom:1px solid var(--c-border);font-size:0.9rem;}
+.score-summary .hot-row td{font-weight:700;border-top:2px solid var(--c-accent);}
+.score-summary .hot-val{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--c-accent);letter-spacing:-0.02em;}
+
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
+.signal-card{padding:1.5rem;}
+.signal-card.bull{background:color-mix(in srgb,var(--c-accent) 12%,var(--c-bg));border-left:3px solid var(--c-accent);}
+.signal-card.bear{background:color-mix(in srgb,#C07060 12%,var(--c-bg));border-left:3px solid #C07060;}
+.signal-card h5{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.8rem;}
+.signal-card.bull h5{color:var(--c-accent);}
+.signal-card.bear h5{color:#C07060;}
+.signal-card li{font-size:0.85rem;color:var(--c-fg-2);line-height:1.7;padding-left:1.2em;position:relative;list-style:none;margin-bottom:0.3rem;}
+.signal-card li::before{content:"—";position:absolute;left:0;color:var(--c-accent);font-family:var(--f-mono);}
+.signal-card.bear li::before{color:#C07060;}
+
+.conclusion{background:var(--c-bg);color:var(--c-fg);padding:2rem;margin:1.5rem 0;position:relative;}
+.conclusion::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.conclusion>*{position:relative;z-index:1;}
+.conclusion h3{font-family:var(--f-display);font-size:1.3rem;font-weight:600;margin-bottom:1rem;}
+.conclusion h3 em{font-style:italic;color:var(--c-accent);}
+.conclusion p{font-size:0.9rem;color:var(--c-fg-2);line-height:1.8;}
+
+.footer{background:var(--c-bg);color:var(--c-fg-3);text-align:center;padding:2.5rem 4vw;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;position:relative;}
+.footer::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.footer>*{position:relative;z-index:1;}
+
+.track-table{width:100%;border-collapse:collapse;}
+.track-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.5rem;border-bottom:1px solid var(--c-border);}
+.track-table td{padding:0.5rem;border-bottom:1px solid var(--c-border);font-size:0.85rem;color:var(--c-fg-2);}
+
+.badge{display:inline-block;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-accent);border:1px solid var(--c-accent);padding:0.3em 0.8em;}
+
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+.compare-card{background:var(--c-bg);color:var(--c-fg);padding:1.2rem;text-align:center;}
+.compare-card .c-name{font-weight:600;font-size:0.9rem;margin-bottom:0.5rem;}
+.compare-card .c-hot{font-family:var(--f-display);font-size:1.5rem;font-weight:700;color:var(--c-accent);}
+.compare-card .c-tag{font-size:0.75rem;color:var(--c-fg-2);margin-top:0.3rem;}
+
+@media(max-width:700px){.signal-grid,.compare-grid{grid-template-columns:1fr;}.hero-meta{flex-direction:column;gap:0.5rem;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-stamp">深度分析 · <span>最稳品质</span> · 年末品牌收官首选</div>
+  <div class="hero-rule"></div>
+  <h1>美顺<em>与长生</em></h1>
+  <p class="lead">黄轩 × 李路（人世间） × 年代家庭 —— 品质确定性最高的A级项目</p>
+  <div class="hero-meta">
+    <span>Hot Index: 7.40 · A级</span>
+    <span>2026年12月 · 待播</span>
+    <span>热剧预言家 · 2026-07-17</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">节目概要</div>
+  <h2>基础 <em>信息</em></h2>
+  <table class="info-table">
+    <tr><td>类型/题材</td><td>年代情感家庭</td></tr>
+    <tr><td>播出平台</td><td>芒果TV + 湖南卫视（台网联播）</td></tr>
+    <tr><td>预计档期</td><td>2026年12月（年末跨年档）</td></tr>
+    <tr><td>主演阵容</td><td>黄轩、刘浩存、林晓杰、杨立新、王鸥</td></tr>
+    <tr><td>导演</td><td><strong>李路</strong>（《人世间》《人民的名义》）</td></tr>
+    <tr><td>IP 来源</td><td>《美顺与长生》同名小说</td></tr>
+  </table>
+</section>
+
+<section class="section-dark">
+  <div class="inner">
+    <div class="kicker">六维度评分</div>
+    <h2>双层分析 <em>明细</em></h2>
+
+    <div class="dim-card">
+      <h4>维度 1: 卡司号召力 <em>· 权重 25%</em></h4>
+      <div class="dim-meta"><span>Base: 8</span><span>Correction: 0</span><span>Final: 8</span></div>
+      <div class="dim-score">8 / 10</div>
+      <table class="ev-table">
+        <tr><td>Layer 1</td><td>🔥黄轩《山海情》豆瓣9.2(现象级年代剧)、《红高粱》8.3——年代剧适配度最高的男演员之一。刘浩存(新生代电影咖)、杨立新(老戏骨)、王鸥(实力派)。</td></tr>
+        <tr><td>Layer 2</td><td>黄轩近年持续深耕品质剧路线，口碑稳定。</td></tr>
+      </table>
+      <div class="insight">黄轩+年代剧=最佳适配。山海情9.2的履历说明他在这个赛道的上限极高。</div>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 2: 主创班底 <em>· 权重 15%</em></h4>
+      <div class="dim-meta"><span>Base: 9</span><span>Correction: 0</span><span>Final: 9</span></div>
+      <div class="dim-score">9 / 10</div>
+      <table class="ev-table">
+        <tr><td>Layer 1</td><td>🔥🔥李路《人世间》现象级全民爆款——收视破3/爱奇艺热度破万/茅盾文学奖改编标杆；《人民的名义》豆瓣8.3——2017收视年冠，引发全民讨论。</td></tr>
+        <tr><td>Layer 2</td><td>《人世间》后李路已成为中国年代剧第一导演，目前处于创作巅峰期。</td></tr>
+      </table>
+      <div class="insight">李路=年代剧第一导演，人世间+人民的名义=两部国民级爆款。这个赛道的统治力无可匹敌。</div>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 3: IP 基础 <em>· 权重 20%</em></h4>
+      <div class="dim-meta"><span>Base: 6</span><span>Correction: 0</span><span>Final: 6</span></div>
+      <div class="dim-score">6 / 10</div>
+      <p>《美顺与长生》小说——非顶级IP，知名度中等。但李路擅长的正是"中小IP→现象级剧集"的改编路线（人世间虽为茅奖但当时影视化前景不被看好）。</p>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 4: 类型赛道 <em>· 权重 15%</em></h4>
+      <div class="dim-meta"><span>Base: 7</span><span>Correction: +1</span><span>Final: 8</span></div>
+      <div class="dim-score">8 / 10</div>
+      <p>年代情感家庭=近年最稳定的全民向赛道。年末跨年档+全民向题材=天然的"跨年话题剧"定位。黄轩+李路=赛道最强人+导演组合。</p>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 5: 平台资源 <em>· 权重 15%</em></h4>
+      <div class="dim-meta"><span>Base: 6</span><span>Correction: +1</span><span>Final: 7</span></div>
+      <div class="dim-score">7 / 10</div>
+      <p>芒果TV会员3613万(约腾讯1/3)，平台是最大制约。但湖南卫视全国卫视收视率领先，且李路级导演选择芒果说明平台给出了顶级资源承诺。</p>
+    </div>
+
+    <div class="dim-card">
+      <h4>维度 6: 社媒声量 <em>· 权重 10%</em></h4>
+      <div class="dim-meta"><span>Base: 6</span><span>Correction: 0</span><span>Final: 6</span></div>
+      <div class="dim-score">6 / 10</div>
+      <p>待播阶段宣传尚未全面启动。但李路新作天然自带话题度，年末档+黄轩的宣发爆发力将在临近播出时释放。</p>
+    </div>
+
+    <table class="score-summary">
+      <thead><tr><th>维度</th><th>权重</th><th>Base</th><th>Δ</th><th>Final</th><th>加权</th></tr></thead>
+      <tbody>
+        <tr><td>卡司号召力</td><td>25%</td><td>8</td><td>0</td><td>8</td><td>2.00</td></tr>
+        <tr><td>主创班底</td><td>15%</td><td>9</td><td>0</td><td>9</td><td>1.35</td></tr>
+        <tr><td>IP 基础</td><td>20%</td><td>6</td><td>0</td><td>6</td><td>1.20</td></tr>
+        <tr><td>类型赛道</td><td>15%</td><td>7</td><td>+1</td><td>8</td><td>1.20</td></tr>
+        <tr><td>平台资源</td><td>15%</td><td>6</td><td>+1</td><td>7</td><td>1.05</td></tr>
+        <tr><td>社媒声量</td><td>10%</td><td>6</td><td>0</td><td>6</td><td>0.60</td></tr>
+        <tr class="hot-row"><td colspan="4">Hot Index</td><td class="hot-val">7.40</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">信号分析</div>
+  <h2>利好 <em>&</em> 风险</h2>
+  <div class="signal-grid">
+    <div class="signal-card bull">
+      <h5>✅ 利好信号</h5>
+      <ul>
+        <li>李路=年代剧之神：人世间+人民的名义=两部国民级爆款</li>
+        <li>黄轩+年代剧=完美适配：山海情9.2证明上限</li>
+        <li>年末跨年档：品牌年度收官的最佳选择</li>
+        <li>全民向题材：覆盖全年龄段，受众最广</li>
+        <li>品质确定性在三部中最高：几乎不可能失败</li>
+      </ul>
+    </div>
+    <div class="signal-card bear">
+      <h5>⚠️ 风险信号</h5>
+      <ul>
+        <li>芒果TV平台天花板：会员数仅为腾讯1/3</li>
+        <li>IP偏弱：与《人世间》有茅盾文学奖加持不同</li>
+        <li>刘浩存电视剧号召力未验证</li>
+        <li>社媒声量偏低：当前阶段公众关注度有限</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h3>🔮 <em>预测结论</em></h3>
+    <p><strong>美顺与长生是"品质确定性最高"的A级项目。</strong>虽然Hot Index 7.40在三部中最低，但风险也最低——李路+黄轩+年代剧=几乎不可能失败。核心价值：(1)年末跨年档=品牌年度收官最佳选择；(2)全民向题材=最广受众覆盖；(3)李路品质保证=口碑风险极低。</p>
+    <p style="margin-top:1rem;">三部差异化定位——<strong>谍报是"最确定爆"，长风是"最大黑马"，美顺是"最稳品质"。</strong></p>
+
+    <div class="compare-grid">
+      <div class="compare-card"><div class="c-name">🥇 谍报上不封顶</div><div class="c-hot">8.60</div><div class="c-tag">最确定爆</div></div>
+      <div class="compare-card"><div class="c-name">🥈 长风起</div><div class="c-hot">8.55</div><div class="c-tag">最大黑马</div></div>
+      <div class="compare-card"><div class="c-name">🥉 美顺与长生</div><div class="c-hot">7.40</div><div class="c-tag">最稳品质</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">追踪计划</div>
+  <h2>播出后 <em>追踪</em></h2>
+  <table class="track-table">
+    <thead><tr><th>追踪节点</th><th>时间</th><th>关注指标</th></tr></thead>
+    <tbody>
+      <tr><td>宣发启动</td><td>预计10-11月</td><td>预告片、海报、话题造势</td></tr>
+      <tr><td>定档官宣</td><td>预计11月</td><td>湖南卫视年末档具体排期</td></tr>
+      <tr><td>首播日</td><td>预计12月</td><td>酷云收视率、芒果TV播放量</td></tr>
+      <tr><td>跨年期间</td><td>首播+1-2周</td><td>社交话题扩散、口碑发酵</td></tr>
+      <tr><td>热播期结束</td><td>2027年1月</td><td>有效播放量、豆瓣评分</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="footer">
+  <p>🔮 热剧预言家 · Hot Program Prediction Agent · v1.0</p>
+  <p style="margin-top:0.4rem;">数据来源：firecrawl 实时搜索 · 豆瓣 · 百度百科</p>
+  <p style="margin-top:0.4rem;">预测日期：2026-07-17 · 所有评分附搜索来源</p>
+</footer>
+
+</body>
+</html>
