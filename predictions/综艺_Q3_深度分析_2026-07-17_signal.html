@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>热剧预言 · 2026 Q3 综艺深度分析</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--c-bg:#1C2644;--c-bg-light:#F0ECE3;--c-fg:#E2DCD0;--c-fg-2:#8A96A8;--c-fg-3:#4E5A6E;--c-fg-light:#1A2030;--c-fg-light-2:#5A6270;--c-accent:#C8A870;--c-border:#2E3D5C;--c-border-light:#CAC4B4;--f-display:"Source Serif 4","Noto Serif SC",Georgia,serif;--f-body:"DM Sans","Noto Sans SC",system-ui,sans-serif;--f-mono:"IBM Plex Mono",monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-body);line-height:1.75;}
+.hero{background:var(--c-bg);color:var(--c-fg);padding:4rem 8vw 3rem;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.hero>*{position:relative;z-index:1;}
+.hero-stamp{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--c-fg-3);margin-bottom:1rem;}
+.hero-stamp span{color:var(--c-accent);}
+.hero-rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+.hero h1{font-family:var(--f-display);font-size:clamp(32px,4.5vw,56px);font-weight:700;line-height:1.08;letter-spacing:-0.02em;}
+.hero h1 em{font-style:italic;color:var(--c-accent);}
+.hero .lead{font-size:1rem;color:var(--c-fg-2);max-width:560px;line-height:1.6;margin-top:0.5rem;}
+.hero-meta{display:flex;gap:2rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);margin-top:2rem;flex-wrap:wrap;}
+
+.section{max-width:960px;margin:0 auto;padding:2.5rem 4vw;}
+.section-dark{background:var(--c-bg);color:var(--c-fg);padding:2.5rem 8vw;position:relative;}
+.section-dark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.section-dark>*{position:relative;z-index:1;}
+.section-dark .inner{max-width:960px;margin:0 auto;}
+
+.kicker{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-accent);margin-bottom:0.5rem;}
+h2{font-family:var(--f-display);font-size:clamp(24px,2.8vw,36px);font-weight:600;line-height:1.2;margin-bottom:0.8rem;}
+h2 em{font-style:italic;color:var(--c-accent);}
+
+.show-card{background:var(--c-bg);color:var(--c-fg);padding:2rem;margin-bottom:2rem;position:relative;}
+.show-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.show-card>*{position:relative;z-index:1;}
+.show-card h3{font-family:var(--f-display);font-size:1.4rem;font-weight:600;margin-bottom:0.3rem;}
+.show-card h3 em{font-style:italic;color:var(--c-accent);}
+.show-card .show-meta{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--c-fg-3);margin-bottom:1rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+.show-card .show-hot{font-family:var(--f-display);font-size:2.5rem;font-weight:700;color:var(--c-accent);margin:0.5rem 0;}
+
+.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;margin:1rem 0;}
+.score-item{background:var(--c-bg-alt);padding:0.8rem;text-align:center;}
+.score-item .s-name{font-family:var(--f-mono);font-size:0.55rem;letter-spacing:0.1em;color:var(--c-fg-3);text-transform:uppercase;margin-bottom:0.3rem;}
+.score-item .s-val{font-family:var(--f-display);font-size:1.4rem;font-weight:600;color:var(--c-accent);}
+.score-item .s-wt{font-size:0.6rem;color:var(--c-fg-3);}
+
+.signal-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+.signal-box{padding:1rem;}
+.signal-box.bull{background:color-mix(in srgb,var(--c-accent) 10%,var(--c-bg-alt));border-left:3px solid var(--c-accent);}
+.signal-box.bear{background:color-mix(in srgb,#C07060 10%,var(--c-bg-alt));border-left:3px solid #C07060;}
+.signal-box h5{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.5rem;}
+.signal-box.bull h5{color:var(--c-accent);}
+.signal-box.bear h5{color:#C07060;}
+.signal-box li{font-size:0.8rem;color:var(--c-fg-2);line-height:1.6;list-style:none;padding-left:1em;position:relative;margin-bottom:0.2rem;}
+.signal-box li::before{content:"—";position:absolute;left:0;color:var(--c-accent);font-family:var(--f-mono);}
+.signal-box.bear li::before{color:#C07060;}
+
+.compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.85rem;}
+.compare-table th{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:0.5rem;border-bottom:1px solid var(--c-border);}
+.compare-table td{padding:0.5rem;border-bottom:1px solid var(--c-border);}
+.compare-table .hi{font-weight:700;color:var(--c-accent);}
+
+.insight-box{background:var(--c-bg);color:var(--c-fg);padding:1.5rem;margin-top:1.5rem;border-left:3px solid var(--c-accent);}
+.insight-box h4{font-family:var(--f-display);font-size:1.1rem;font-weight:600;margin-bottom:0.8rem;}
+.insight-box h4 em{font-style:italic;color:var(--c-accent);}
+.insight-box p{font-size:0.9rem;color:var(--c-fg-2);line-height:1.7;}
+
+.footer{background:var(--c-bg);color:var(--c-fg-3);text-align:center;padding:2.5rem 4vw;font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;position:relative;}
+.footer::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.footer>*{position:relative;z-index:1;}
+
+.badge{display:inline-block;font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-accent);border:1px solid var(--c-accent);padding:0.3em 0.8em;}
+.badge-S{color:#C8A870;border-color:#C8A870;}
+.badge-A{color:var(--c-accent);border-color:var(--c-accent);}
+.badge-B{color:var(--c-fg-2);border-color:var(--c-fg-2);}
+.badge-C{color:var(--c-fg-3);border-color:var(--c-fg-3);}
+
+@media(max-width:700px){.signal-row,.score-grid{grid-template-columns:1fr 1fr;}.hero-meta{flex-direction:column;gap:0.5rem;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-stamp">综艺 · <span>Q3深度分析</span> · 七维度模型</div>
+  <div class="hero-rule"></div>
+  <h1>2026 Q3 <em>重点综艺</em></h1>
+  <p class="lead">披荆斩棘2026 · 后会友期 · 心动的信号9 · 花儿与少年8 —— 四档核心综艺七维度深度拆解</p>
+  <div class="hero-meta">
+    <span>披荆斩棘 7.3 A</span><span>后会友期 6.9 B</span><span>心动的信号9 6.6 B</span><span>花少8 6.0 B</span>
+    <span>热剧预言家 · 2026-07-17</span>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="inner">
+    <div class="show-card">
+      <h3>🥇 披荆斩棘2026 <em>· Q3冠军</em></h3>
+      <div class="show-meta"><span>芒果</span><span>音乐竞演</span><span>综N代第6季</span><span>8月14日初舞台</span></div>
+      <div class="show-hot">7.3 <span style="font-size:1rem;font-weight:400;">A级</span></div>
+      <div class="score-grid">
+        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">10</div><div class="s-wt">2.50</div></div>
+        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">9</div><div class="s-wt">1.80</div></div>
+        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">6.5</div><div class="s-wt">0.975</div></div>
+        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">8</div><div class="s-wt">1.20</div></div>
+        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">9</div><div class="s-wt">1.08</div></div>
+        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">8.5</div><div class="s-wt">0.68</div></div>
+        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">4</div><div class="s-wt">0.20</div></div>
+        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">8.4</div><div class="s-wt">→ Final 7.3</div></div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-box bull"><h5>✅ 利好</h5><ul><li>IP品牌力满分——芒果S+旗舰</li><li>每季必产回忆杀名场面</li><li>芒果综艺第一平台加持</li><li>全男星群像模式无可复制</li></ul></div>
+        <div class="signal-box bear"><h5>⚠️ 风险</h5><ul><li>第6季审美疲劳</li><li>制作团队非顶级（非吴梦知/洪涛）</li><li>Q3竞争密集——comp_penalty 0.846</li><li>创新度仅4分</li></ul></div>
+      </div>
+    </div>
+
+    <div class="show-card">
+      <h3>🥈 后会友期 <em>· Q3黑马</em></h3>
+      <div class="show-meta"><span>芒果</span><span>社交治愈</span><span>新综</span><span>8月初上线</span></div>
+      <div class="show-hot">6.9 <span style="font-size:1rem;font-weight:400;">B级</span></div>
+      <div class="score-grid">
+        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">3</div><div class="s-wt">0.75</div></div>
+        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">6</div><div class="s-wt">1.20</div></div>
+        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">7.5</div><div class="s-wt">1.125</div></div>
+        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">9</div><div class="s-wt">1.35</div></div>
+        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">9</div><div class="s-wt">1.08</div></div>
+        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">8.5</div><div class="s-wt">0.68</div></div>
+        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">9</div><div class="s-wt">0.45</div></div>
+        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">6.6</div><div class="s-wt">→ Final 6.9</div></div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-box bull"><h5>✅ 利好</h5><ul><li>社交治愈赛道×1.05加成</li><li>"友谊修复"题材国内首创</li><li>芒果平台S级资源</li><li>新综中排名最高</li></ul></div>
+        <div class="signal-box bear"><h5>⚠️ 风险</h5><ul><li>新综无IP积累</li><li>首季成败全靠内容质量</li><li>阵容非顶级流量</li></ul></div>
+      </div>
+    </div>
+
+    <div class="show-card">
+      <h3>🥉 心动的信号9 <em>· 最长寿恋综</em></h3>
+      <div class="show-meta"><span>腾讯</span><span>情感恋爱</span><span>综N代第9季</span><span>8月3日开播</span></div>
+      <div class="show-hot">6.6 <span style="font-size:1rem;font-weight:400;">B级</span></div>
+      <div class="score-grid">
+        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">10</div><div class="s-wt">2.50</div></div>
+        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">7</div><div class="s-wt">1.40</div></div>
+        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">8.5</div><div class="s-wt">1.275</div></div>
+        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">6</div><div class="s-wt">0.90</div></div>
+        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">9</div><div class="s-wt">1.08</div></div>
+        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">7.5</div><div class="s-wt">0.60</div></div>
+        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">3</div><div class="s-wt">0.15</div></div>
+        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">7.9</div><div class="s-wt">→ Final 6.6</div></div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-box bull"><h5>✅ 利好</h5><ul><li>IP品牌力满分——9年老IP</li><li>王鹏飞团队恋综顶级制作</li><li>每季必有出圈CP</li></ul></div>
+        <div class="signal-box bear"><h5>⚠️ 风险</h5><ul><li>恋综赛道×0.90系统性降温</li><li>第9季模式高度固化</li><li>创新度仅3分——"吃老本"</li></ul></div>
+      </div>
+    </div>
+
+    <div class="show-card">
+      <h3>🏅 花儿与少年8 <em>· 被低估的潜力股</em></h3>
+      <div class="show-meta"><span>芒果</span><span>旅行户外</span><span>综N代第8季</span><span>9月上线</span></div>
+      <div class="show-hot">6.0 <span style="font-size:1rem;font-weight:400;">B级</span></div>
+      <div class="score-grid">
+        <div class="score-item"><div class="s-name">IP品牌力 25%</div><div class="s-val">9</div><div class="s-wt">2.25</div></div>
+        <div class="score-item"><div class="s-name">阵容热度 20%</div><div class="s-val">9</div><div class="s-wt">1.80</div></div>
+        <div class="score-item"><div class="s-name">制作团队 15%</div><div class="s-val">8.5</div><div class="s-wt">1.275</div></div>
+        <div class="score-item"><div class="s-name">赛道适配 15%</div><div class="s-val">7</div><div class="s-wt">1.05</div></div>
+        <div class="score-item"><div class="s-name">话题潜力 12%</div><div class="s-val">9</div><div class="s-wt">1.08</div></div>
+        <div class="score-item"><div class="s-name">平台优势 8%</div><div class="s-val">8.5</div><div class="s-wt">0.68</div></div>
+        <div class="score-item"><div class="s-name">创新度 5%</div><div class="s-val">5</div><div class="s-wt">0.25</div></div>
+        <div class="score-item" style="background:color-mix(in srgb,var(--c-accent) 15%,var(--c-bg-alt));"><div class="s-name" style="color:var(--c-accent);">Base Score</div><div class="s-val" style="font-size:2rem;">8.4</div><div class="s-wt">→ Final 6.0</div></div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-box bull"><h5>✅ 利好</h5><ul><li>Base Score 8.4=与披哥持平！</li><li>阵容星光度Q3最高</li><li>李超团队(花少5功臣)品质保障</li><li>"文明互鉴"主题差异化</li></ul></div>
+        <div class="signal-box bear"><h5>⚠️ 致命风险</h5><ul><li>comp_penalty仅0.716——Q3竞争惩罚最重！</li><li>同季度14档旅行/社交类同时上线</li><li>没有"北斗七行"级口碑将被淹没</li></ul></div>
+      </div>
+    </div>
+
+    <table class="compare-table">
+      <thead><tr><th></th><th>披荆斩棘</th><th>后会友期</th><th>心动9</th><th>花少8</th></tr></thead>
+      <tbody>
+        <tr><td>IP品牌力</td><td class="hi">10</td><td>3</td><td class="hi">10</td><td>9</td></tr>
+        <tr><td>阵容热度</td><td class="hi">9</td><td>6</td><td>7</td><td class="hi">9</td></tr>
+        <tr><td>制作团队</td><td>6.5</td><td>7.5</td><td class="hi">8.5</td><td class="hi">8.5</td></tr>
+        <tr><td>赛道适配</td><td>8</td><td class="hi">9</td><td>6</td><td>7</td></tr>
+        <tr><td>创新度</td><td>4</td><td class="hi">9</td><td>3</td><td>5</td></tr>
+        <tr><td>Final</td><td class="hi" style="font-size:1.3rem;">7.3</td><td>6.9</td><td>6.6</td><td>6.0</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box">
+      <h4>🔮 <em>Q3核心洞察</em></h4>
+      <p><strong>披荆斩棘稳坐冠军</strong>——IP+阵容双保险；<strong>后会友期是新综黑马</strong>——社交治愈赛道红利+题材创新；<strong>花少8 Base最高但Final偏低</strong>——被Q3竞争惩罚严重拖累，是最有可能被低估的Q3综艺。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>🔮 热剧预言家 · 综艺七维度预测模型</p>
+  <p style="margin-top:0.4rem;">数据来源：firecrawl · 百度百科 · 芒果TV · 腾讯视频 · 爱奇艺</p>
+  <p style="margin-top:0.4rem;">预测日期：2026-07-17</p>
+</footer>
+</body>
+</html>
