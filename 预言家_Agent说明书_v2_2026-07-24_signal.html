@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>热剧预言家 · Agent 说明书 v2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--c-bg:#1C2644;--c-bg-light:#F0ECE3;--c-fg:#E2DCD0;--c-fg-2:#8A96A8;--c-fg-3:#4E5A6E;--c-fg-light:#1A2030;--c-fg-light-2:#5A6270;--c-accent:#C8A870;--c-border:#2E3D5C;--c-border-light:#CAC4B4;--f-display:"Source Serif 4","Noto Serif SC",Georgia,serif;--f-body:"DM Sans","Noto Sans SC",system-ui,sans-serif;--f-mono:"IBM Plex Mono",monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--c-bg-light);color:var(--c-fg-light);font-family:var(--f-body);line-height:1.75;}
+
+/* ═══ DARK ═══ */
+.dark{background:var(--c-bg);color:var(--c-fg);position:relative;overflow:hidden;}
+.dark::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.dark>*{position:relative;z-index:1;}
+
+/* ═══ HERO ═══ */
+.hero{padding:5rem 8vw 4rem;min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-stamp{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--c-fg-3);margin-bottom:1rem;}
+.hero-stamp span{color:var(--c-accent);}
+.hero-rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:2rem;}
+.hero h1{font-family:var(--f-display);font-size:clamp(40px,7vw,88px);font-weight:700;line-height:.96;letter-spacing:-.02em;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--c-accent);}
+.hero .lead{font-family:var(--f-display);font-style:italic;font-size:1.1rem;color:var(--c-fg-2);max-width:600px;line-height:1.5;margin-bottom:2rem;}
+.hero-meta{display:flex;gap:2rem;padding-top:1rem;border-top:1px solid var(--c-border);font-family:var(--f-mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-fg-3);flex-wrap:wrap;}
+
+/* ═══ SECTION ═══ */
+.section{padding:4rem 8vw;}
+.section .inner{max-width:1100px;margin:0 auto;}
+h2{font-family:var(--f-display);font-size:clamp(28px,3.5vw,48px);font-weight:600;line-height:1.12;margin-bottom:1rem;}
+h2 em{font-style:italic;color:var(--c-accent);}
+h3{font-family:var(--f-display);font-size:clamp(20px,2vw,28px);font-weight:600;margin-bottom:.8rem;}
+.dark h3{color:var(--c-fg);}
+.rule{width:36px;height:1px;background:var(--c-accent);margin-bottom:1.5rem;}
+.kicker{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-accent);margin-bottom:.5rem;}
+
+/* ═══ TABLES ═══ */
+.tbl{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem;}
+.tbl th{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-fg-3);text-align:left;padding:.6rem .5rem;border-bottom:1px solid var(--c-border);}
+.tbl td{padding:.55rem .5rem;border-bottom:1px solid var(--c-border);}
+.dark .tbl td{border-color:var(--c-border);}
+.tbl .hi{font-weight:700;color:var(--c-accent);}
+.tbl .new{font-family:var(--f-mono);font-size:.55rem;color:var(--c-accent);border:1px solid var(--c-accent);padding:0.1em .4em;margin-left:.3em;}
+
+/* ═══ CARDS ═══ */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin:1.5rem 0;}
+.card{background:var(--c-bg);color:var(--c-fg);padding:2rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.card>*{position:relative;z-index:1;}
+.card h4{font-family:var(--f-display);font-size:1.2rem;font-weight:600;margin-bottom:.5rem;}
+.card h4 em{font-style:italic;color:var(--c-accent);}
+.card p{font-size:.85rem;color:var(--c-fg-2);line-height:1.7;}
+.card .icon{font-size:2rem;margin-bottom:.5rem;}
+
+.card-grid-3{grid-template-columns:repeat(3,1fr);}
+
+.formula-box{background:color-mix(in srgb,var(--c-accent) 12%,var(--c-bg));padding:1.2rem 1.8rem;margin:1rem 0;border:1px solid var(--c-border);font-family:var(--f-mono);font-size:.85rem;line-height:1.8;text-align:center;}
+.formula-box em{color:var(--c-accent);font-style:normal;font-weight:500;}
+.formula-box.light-bg{background:color-mix(in srgb,var(--c-accent) 8%,var(--c-bg-light));border:1px solid var(--c-border-light);color:var(--c-fg-light);}
+
+.dim-list{list-style:none;margin:1rem 0;}
+.dim-list li{font-size:.85rem;padding:.5rem 0;border-bottom:1px solid var(--c-border);display:flex;justify-content:space-between;align-items:center;}
+.dim-list li span:last-child{font-family:var(--f-mono);font-size:.7rem;color:var(--c-fg-3);}
+.dim-list .wt{font-family:var(--f-display);font-size:1rem;font-weight:600;color:var(--c-accent);}
+
+.vs-box{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.5rem 0;}
+.vs-col{padding:1.5rem;}
+.vs-col h4{font-family:var(--f-display);font-size:1rem;font-weight:600;margin-bottom:.8rem;}
+.vs-col h4 em{font-style:italic;color:var(--c-accent);}
+.vs-col ul{list-style:none;font-size:.85rem;}
+.vs-col ul li{padding:.3rem 0;padding-left:1.2em;position:relative;}
+.vs-col ul li::before{content:'—';position:absolute;left:0;color:var(--c-accent);font-family:var(--f-mono);}
+
+/* ═══ STEPS ═══ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.5rem 0;}
+.step{background:var(--c-bg);padding:1.5rem;position:relative;overflow:hidden;text-align:center;}
+.step::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.step>*{position:relative;z-index:1;}
+.step .n{font-family:var(--f-display);font-size:3rem;font-weight:700;color:var(--c-accent);line-height:1;margin-bottom:.5rem;}
+.step h5{font-family:var(--f-body);font-weight:600;font-size:.85rem;margin-bottom:.3rem;}
+.step p{font-size:.75rem;color:var(--c-fg-2);}
+
+/* ═══ FOOTER ═══ */
+.footer{background:var(--c-bg);color:var(--c-fg-3);text-align:center;padding:3rem 8vw;position:relative;overflow:hidden;}
+.footer::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+.footer>*{position:relative;z-index:1;font-family:var(--f-mono);font-size:.65rem;letter-spacing:.1em;}
+
+/* ═══ REPORT LINKS ═══ */
+.report-list{list-style:none;margin:1rem 0;}
+.report-list li{padding:.6rem 0;border-bottom:1px solid var(--c-border);}
+.report-list a{color:var(--c-fg);text-decoration:none;font-size:.9rem;display:flex;justify-content:space-between;align-items:center;}
+.report-list a:hover{color:var(--c-accent);}
+.report-list .r-date{font-family:var(--f-mono);font-size:.65rem;color:var(--c-fg-3);}
+
+.badge{display:inline-block;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.2em .6em;}
+.badge-new{color:#7AC070;border:1px solid #7AC070;}
+.badge-hot{color:var(--c-accent);border:1px solid var(--c-accent);}
+
+@media(max-width:768px){.card-grid,.card-grid-3,.steps,.vs-box{grid-template-columns:1fr;}.hero h1{font-size:36px;}}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="dark hero">
+  <div class="hero-stamp">Agent Documentation · <span>v2.0</span> · 2026-07-24</div>
+  <div class="hero-rule"></div>
+  <h1>热剧<em>预言家</em></h1>
+  <p class="lead">AI 驱动的热门节目预测引擎 —— 覆盖电视剧 & 综艺，六/七维度评分，竞争惩罚修正，为品牌广告投放提供数据决策参考</p>
+  <div class="hero-meta">
+    <span>电视剧模型 v2.0</span><span>综艺模型 v1.1</span><span>竞争惩罚机制</span><span>Claude Code Native Agent</span>
+  </div>
+</section>
+
+<!-- ═══════ OVERVIEW ═══════ -->
+<section class="light section">
+  <div class="inner">
+    <div class="kicker">Agent 概览</div>
+    <h2>什么是 <em>热剧预言家</em>？</h2>
+    <div class="rule"></div>
+    <div class="card-grid">
+      <div class="card light" style="background:var(--c-bg-light);border:1px solid var(--c-border-light);color:var(--c-fg-light);">
+        <div class="icon">📺</div>
+        <h4 style="color:var(--c-fg-light);">电视剧 <em>预测</em></h4>
+        <p style="color:var(--c-fg-light-2);">六维度双层评分模型，覆盖卡司、主创、IP、类型、平台、社媒。v2.0 新增同期同赛道竞争惩罚机制。</p>
+      </div>
+      <div class="card light" style="background:var(--c-bg-light);border:1px solid var(--c-border-light);color:var(--c-fg-light);">
+        <div class="icon">🎤</div>
+        <h4 style="color:var(--c-fg-light);">综艺 <em>预测</em></h4>
+        <p style="color:var(--c-fg-light-2);">七维度乘法评分模型，覆盖IP品牌、阵容、制作团队、赛道、话题、平台、创新度。v1.1 竞争惩罚关联Base Score。</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h5>唤醒 Agent</h5><p>输入「预言家」触发</p></div>
+      <div class="step"><div class="n">02</div><h5>提供信息</h5><p>节目名称 & 基础信息</p></div>
+      <div class="step"><div class="n">03</div><h5>实时搜索评分</h5><p>firecrawl 搜索 + 模型计算</p></div>
+      <div class="step"><div class="n">04</div><h5>获取报告</h5><p>Markdown + HTML + GitHub Pages</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TV DRAMA MODEL ═══════ -->
+<section class="dark section">
+  <div class="inner">
+    <div class="kicker">模型一</div>
+    <h2>电视剧预测 <em>v2.0</em> <span class="badge badge-new">NEW</span></h2>
+    <div class="rule"></div>
+    <p style="color:var(--c-fg-2);margin-bottom:1.5rem;">六维度加权评分 + 同期同赛道竞争惩罚。覆盖 2026 Q3-Q4 共 32 部定档剧集。</p>
+
+    <h3>六维度权重</h3>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>维度</th><th>权重</th><th>评分依据</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>卡司号召力</td><td class="hi">25%</td><td>主演历史作品豆瓣评分、热播履历、近期热度趋势</td></tr>
+        <tr><td>2</td><td>IP 基础</td><td class="hi">20%</td><td>原作知名度、同类改编成功率、IP粉丝基础</td></tr>
+        <tr><td>3</td><td>主创班底</td><td>15%</td><td>导演/编剧过往作品口碑、获奖记录</td></tr>
+        <tr><td>4</td><td>类型赛道</td><td>15%</td><td>题材市场容量、2025-2026年同类型表现</td></tr>
+        <tr><td>5</td><td>平台资源</td><td>15%</td><td>播出平台会员基数、宣发资源、排播档期</td></tr>
+        <tr><td>6</td><td>社媒声量</td><td>10%</td><td>微博话题、抖音播放、预约量、预告片反响</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.8rem;color:var(--c-fg-3);">特殊规则：原创剧本 → IP权重并入卡司（45%）；Layer 1 历史基线 + Layer 2 趋势修正</p>
+
+    <h3 style="margin-top:2rem;">v2.0 新增：竞争惩罚 <span class="badge badge-new">NEW</span></h3>
+    <div class="formula-box">
+      <em>new_hot_index</em> = hot_index × <em>comp_penalty</em><br>
+      <em>comp_penalty</em> = 1 − density × (1 − hot_index / 10)
+    </div>
+    <p style="font-size:.85rem;color:var(--c-fg-2);">同月同赛道节目越多、自身分数越低，惩罚越重。强者份额大，被蚕食比例小；弱者份额小，拥挤赛道更难突围。</p>
+
+    <table class="tbl" style="margin-top:1rem;">
+      <thead><tr><th>竞争集群</th><th>数量</th><th>density</th><th>典型影响</th></tr></thead>
+      <tbody>
+        <tr><td>8月现代</td><td class="hi">6部</td><td>0.35</td><td>天才女友 6.05→5.21 (-0.84)</td></tr>
+        <tr><td>8月古装</td><td class="hi">5部</td><td>0.25</td><td>师兄太稳健 6.45→5.88 (-0.57)</td></tr>
+        <tr><td>9月各赛道</td><td>3部</td><td>0.12</td><td>长风起 7.90→7.70 (-0.20)</td></tr>
+        <tr><td>独苗赛道</td><td>1部</td><td>0</td><td>谍报上不封顶 8.10→8.10（不受影响）</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ TV TOP 5 ═══════ -->
+<section class="light section">
+  <div class="inner">
+    <h3>电视剧 v2.0 <em>Top 5</em></h3>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>剧集</th><th>月份</th><th>原 Hot</th><th>v2.0 Hot</th><th>Δ</th><th>集群</th></tr></thead>
+      <tbody>
+        <tr><td>🥇</td><td><strong>谍报上不封顶</strong></td><td>10月</td><td>8.10</td><td class="hi">8.10</td><td>—</td><td>独苗</td></tr>
+        <tr><td>🥈</td><td><strong>长风起</strong></td><td>9月</td><td>7.90</td><td class="hi">7.70</td><td>-0.20</td><td>9月悬疑×3</td></tr>
+        <tr><td>🥉</td><td><strong>美顺与长生</strong></td><td>12月</td><td>7.50</td><td class="hi">7.50</td><td>—</td><td>独苗</td></tr>
+        <tr><td>4</td><td>尚公主</td><td>10月</td><td>7.35</td><td>7.19</td><td>-0.16</td><td>10月古装×2</td></tr>
+        <tr><td>5</td><td>九门</td><td>8月</td><td>7.15</td><td>7.15</td><td>—</td><td>独苗</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ VARIETY MODEL ═══════ -->
+<section class="dark section">
+  <div class="inner">
+    <div class="kicker">模型二</div>
+    <h2>综艺预测 <em>v1.1</em> <span class="badge badge-new">NEW</span></h2>
+    <div class="rule"></div>
+    <p style="color:var(--c-fg-2);margin-bottom:1.5rem;">七维度 Base Score × 趋势修正 × 竞争惩罚。覆盖 2026 Q3-Q4 共 43 档综艺。</p>
+
+    <div class="vs-box">
+      <div class="vs-col">
+        <h4>电视剧 <em>vs</em> 综艺差异</h4>
+        <ul>
+          <li>电视剧：六维度 · 加法评分</li>
+          <li>综艺：七维度 · 乘法评分</li>
+          <li>综艺新增「创新度」维度 (5%)</li>
+          <li>综艺平台权重降至 8%</li>
+          <li>综艺IP = 节目品牌（非原著改编）</li>
+        </ul>
+      </div>
+      <div class="vs-col">
+        <h4>综艺独有 <em>趋势修正</em></h4>
+        <ul>
+          <li>市场大盘 ×0.95（全局收缩）</li>
+          <li>喜剧 ×1.15（最强类型红利）</li>
+          <li>情感恋爱 ×0.90（最大逆风）</li>
+          <li>芒果 ×1.05（最强平台）</li>
+          <li>优酷 ×0.88（最大拖累）</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>七维度权重</h3>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>维度</th><th>权重</th><th>评分依据</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>IP 品牌力</td><td class="hi">25%</td><td>综N代往季播放量/豆瓣评分/话题量；新综艺IP原型知名度</td></tr>
+        <tr><td>2</td><td>阵容热度</td><td class="hi">20%</td><td>常驻嘉宾微博粉丝、热搜次数、化学反应预期</td></tr>
+        <tr><td>3</td><td>制作团队</td><td>15%</td><td>制作公司历史综艺战绩、代表作评分</td></tr>
+        <tr><td>4</td><td>赛道适配</td><td>15%</td><td>类型趋势系数、赛道饱和度</td></tr>
+        <tr><td>5</td><td>话题潜力</td><td>12%</td><td>模式话题引爆力、历史热搜产出率</td></tr>
+        <tr><td>6</td><td>平台优势</td><td>8%</td><td>平台综艺基因、会员基数（×0.88~1.05）</td></tr>
+        <tr><td>7</td><td>创新度</td><td>5%</td><td>赛制/模式/视觉创新程度</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:2rem;">v1.1 竞争惩罚 <span class="badge badge-new">NEW</span></h3>
+    <div class="formula-box">
+      <em>new_comp</em> = old_comp + (1 − old_comp) × (base_score − 5) / 10<br>
+      <em>final_score</em> = base_score × trend_adj × new_comp
+    </div>
+    <p style="font-size:.85rem;color:var(--c-fg-2);">Base Score 越高，竞争惩罚越轻。Base=10 惩罚减半，Base=5 惩罚不变，Base<4 惩罚加重。</p>
+  </div>
+</section>
+
+<!-- ═══════ VARIETY TOP ═══════ -->
+<section class="light section">
+  <div class="inner">
+    <h3>综艺 v1.1 <em>Top 5</em></h3>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>节目</th><th>季度</th><th>平台</th><th>v1.0</th><th>v1.1</th><th>Δ</th><th>评级</th></tr></thead>
+      <tbody>
+        <tr><td>🥇</td><td><strong>喜人奇妙夜3</strong></td><td>Q4</td><td>腾讯</td><td>8.5</td><td class="hi">8.8</td><td>+0.3</td><td>S</td></tr>
+        <tr><td>🥈</td><td><strong>一年一度新喜剧大赛</strong></td><td>Q4</td><td>爱奇艺</td><td>7.7</td><td class="hi">7.8</td><td>+0.1</td><td>A</td></tr>
+        <tr><td>🥉</td><td><strong>披荆斩棘2026</strong></td><td>Q3</td><td>芒果</td><td>7.3</td><td class="hi">7.7</td><td>+0.4</td><td>A</td></tr>
+        <tr><td>4</td><td>杨澜访谈录2026</td><td>Q4</td><td>爱奇艺</td><td>6.7</td><td>7.2</td><td>+0.5</td><td>A</td></tr>
+        <tr><td>5</td><td>后会友期</td><td>Q3</td><td>芒果</td><td>6.9</td><td>6.9</td><td>—</td><td>B</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ COMPETITION PENALTY COMPARISON ═══════ -->
+<section class="dark section">
+  <div class="inner">
+    <div class="kicker">核心机制</div>
+    <h2>竞争惩罚 <em>统一逻辑</em></h2>
+    <div class="rule"></div>
+    <p style="color:var(--c-fg-2);margin-bottom:1.5rem;">电视剧 v2.0 和综艺 v1.1 共享同一个核心思想——<strong>强者不应与弱者承受相同的竞争压力。</strong></p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>电视剧 <em>v2.0</em></h4>
+        <div class="formula-box" style="font-size:.75rem;">
+          <em>comp</em> = 1 − density × (1 − hot/10)
+        </div>
+        <p>按月份×赛道分组。同组节目数量决定密度。乘法修正。</p>
+      </div>
+      <div class="card">
+        <h4>综艺 <em>v1.1</em></h4>
+        <div class="formula-box" style="font-size:.75rem;">
+          <em>new_comp</em> = old_comp + (1−old_comp)×(base−5)/10
+        </div>
+        <p>按季度×赛道分组。old_comp 基于同组数量查表。线性修正。</p>
+      </div>
+    </div>
+
+    <table class="tbl" style="margin-top:1.5rem;">
+      <thead><tr><th>模型</th><th>惩罚范围</th><th>最强惩罚</th><th>最强受益</th><th>评级变化</th></tr></thead>
+      <tbody>
+        <tr><td>电视剧 v2.0</td><td>comp 0.81~1.0</td><td>8月现代6部：-0.87</td><td>独苗赛道：无影响</td><td>A:11→7, B:17→16, C:3→8</td></tr>
+        <tr><td>综艺 v1.1</td><td>comp 0.58~1.0</td><td>Q4恋综9档：comp 0.58</td><td>花少8：+0.8</td><td>A:2→3, B:16→18, C:14→12</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════ WORKFLOW ═══════ -->
+<section class="light section">
+  <div class="inner">
+    <div class="kicker">使用方式</div>
+    <h2>Agent <em>工作流</em></h2>
+    <div class="rule"></div>
+    <div class="steps">
+      <div class="step"><div class="n">📺</div><h5>单剧深度分析</h5><p>12轮搜索 · 完整六维度 · 双层评分 · 竞争惩罚修正</p></div>
+      <div class="step"><div class="n">⚖️</div><h5>多剧对比预测</h5><p>2-5部横向PK · 排名 + 品牌投放优先级</p></div>
+      <div class="step"><div class="n">📊</div><h5>批量扫描</h5><p>10+部快速评分 · 按月份/赛道分组 · 竞争惩罚自动计算</p></div>
+      <div class="step"><div class="n">📈</div><h5>追踪复盘</h5><p>播出后对比预测vs实际 · 模型校准</p></div>
+    </div>
+
+    <h3 style="margin-top:2.5rem;">输出格式</h3>
+    <div class="card-grid">
+      <div class="card light" style="background:var(--c-bg-light);border:1px solid var(--c-border-light);color:var(--c-fg-light);">
+        <h4 style="color:var(--c-fg-light);">📝 <em>Markdown</em></h4>
+        <p style="color:var(--c-fg-light-2);">完整七段式报告，含六/七维度评分明细、搜索来源引用、利好/风险分析、追踪计划</p>
+      </div>
+      <div class="card light" style="background:var(--c-bg-light);border:1px solid var(--c-border-light);color:var(--c-fg-light);">
+        <h4 style="color:var(--c-fg-light);">🌐 <em>Signal HTML</em></h4>
+        <p style="color:var(--c-fg-light-2);">深海军蓝+暗金编辑体设计，自动部署到 GitHub Pages，生成可分享链接</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ REPORTS ═══════ -->
+<section class="dark section">
+  <div class="inner">
+    <div class="kicker">已产出报告</div>
+    <h2>在线 <em>报告库</em></h2>
+    <div class="rule"></div>
+    <ul class="report-list">
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/%E8%B0%8D%E6%8A%A5%E4%B8%8A%E4%B8%8D%E5%B0%81%E9%A1%B6_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90_2026-07-17_signal.html" target="_blank"><span>🔮 谍报上不封顶 · 深度分析 (Hot 8.60)</span><span class="r-date">电视剧 · 深度</span></a></li>
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/%E9%95%BF%E9%A3%8E%E8%B5%B7_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90_2026-07-17_signal.html" target="_blank"><span>🔮 长风起 · 深度分析 (Hot 8.55)</span><span class="r-date">电视剧 · 深度</span></a></li>
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/%E7%BE%8E%E9%A1%BA%E4%B8%8E%E9%95%BF%E7%94%9F_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90_2026-07-17_signal.html" target="_blank"><span>🔮 美顺与长生 · 深度分析 (Hot 7.40)</span><span class="r-date">电视剧 · 深度</span></a></li>
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/2026Q3Q4_32%E9%83%A8%E5%BE%85%E6%92%AD%E5%89%A7_%E7%AB%9E%E4%BA%89%E6%83%A9%E7%BD%9Av2_2026-07-24.md" target="_blank"><span>📊 32部待播剧 v2.0 完整排名</span><span class="r-date">电视剧 · v2.0</span></a></li>
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/%E7%BB%BC%E8%89%BA_Q3_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90_2026-07-17_signal.html" target="_blank"><span>📺 Q3 综艺深度分析 · 4档</span><span class="r-date">综艺 · v1.1</span></a></li>
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/%E7%BB%BC%E8%89%BA_Q4_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90_2026-07-17_signal.html" target="_blank"><span>📺 Q4 综艺深度分析 · 4档</span><span class="r-date">综艺 · v1.1</span></a></li>
+      <li><a href="https://peaceliulang98-collab.github.io/Hot-program/predictions/%E7%BB%BC%E8%89%BA_%E5%85%A8%E5%8F%A3%E6%AA%94_v1.1_%E5%AE%8C%E6%95%B4%E6%8E%92%E5%90%8D_2026-07-17.md" target="_blank"><span>🏆 全43档综艺 v1.1 完整排名</span><span class="r-date">综艺 · v1.1</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>🔮 热剧预言家 · Hot Program Prediction Agent · v2.0</p>
+  <p style="margin-top:.5rem;">电视剧六维度 v2.0 + 综艺七维度 v1.1 · 竞争惩罚机制 · firecrawl 实时搜索驱动</p>
+  <p style="margin-top:.5rem;">Claude Code Native Agent · 唤醒词：预言家 · 2026-07-24</p>
+</footer>
+</body>
+</html>
